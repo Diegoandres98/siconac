@@ -19,7 +19,9 @@ require_once("../Modelo/ValidadorDeSession.php");
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   </head>
-  <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed"
+   onload="ubicacion('datosprincipales');"
+  >
   <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -60,20 +62,18 @@ require_once("../Modelo/ValidadorDeSession.php");
 
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="fas fa-user-cog"></i>  <?php echo $_SESSION['users_nombre']
-; ?>
+            <i class="fas fa-user-cog"></i>  <?php echo $_SESSION['users_nombre']; ?>
             <!-- <span class="badge badge-warning navbar-badge">15</span> -->
           </a>
           <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-            <span class="dropdown-item dropdown-header"> <?php echo $_SESSION['users_nombre']
-; ?>
+            <span class="dropdown-item dropdown-header"> <?php echo $_SESSION['users_nombre']; ?>
               <img src="../img/Siconac.png"
                  alt="Siconac Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8" width="30%" height="30%">
 
             </span>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
+            <a href="#" class="dropdown-item" onclick="ubicacion('ActualizarData');">
               <i class="fas fa-user-edit"></i>  Editar Perfil
             </a>
             <div class="dropdown-divider"></div>
@@ -171,7 +171,7 @@ require_once("../Modelo/ValidadorDeSession.php");
               </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link" onclick="ubicacion('ActualizarData');">
+              <a href="#" class="nav-link" >
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
                   Estadisticas
@@ -312,72 +312,6 @@ require_once("../Modelo/ValidadorDeSession.php");
 
       <!-- Main content -->
       <section class="content" id="contenido">
-
-        <div class="container-fluid">
-          <!-- Info boxes -->
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box">
-                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-traffic-light"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Trafico Hoy</span>
-                  <span class="info-box-number">
-                    10
-                    <small>%</small>
-                  </span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-door-open"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Portales</span>
-                  <span class="info-box-number">4</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-
-            <!-- fix for small devices only -->
-            <div class="clearfix hidden-md-up"></div>
-
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-success elevation-1"><i class="fab fa-watchman-monitoring"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Monitores</span>
-                  <span class="info-box-number">4</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Usuarios Activos</span>
-                  <span class="info-box-number">2,000</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-
 
       </section>
       <!-- /.content -->

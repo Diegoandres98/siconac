@@ -1,3 +1,4 @@
+// window.onload = ubicacion('ActualizarData');
 function ubicacion(donde){
   $.ajax({
       type: "GET",

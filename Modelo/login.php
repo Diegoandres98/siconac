@@ -28,7 +28,7 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
     if ($count == 1){
 
       //cargo datos del usuario en variables de sesión
-      $_SESSION['user_id'] = $users[0]['users_id'];
+      $_SESSION['users_id'] = $users[0]['users_id'];
       $_SESSION['users_email'] = $users[0]['users_email'];
       $_SESSION['users_nombre'] = $users[0]['users_nombre'];
 

@@ -1,10 +1,13 @@
 <?php
 require_once("../Modelo/ValidadorDeSession.php");
 
-if(isset($_POST['txtnombre']) && isset($_POST['txtpasswordA'])) {
-  if(isset($_POST['txtpassR1']) && isset($_POST['txtpassR2'])){
+if(isset($_POST['txtnombre']) && isset($_POST['txtpasswordA']) 
+&& isset($_POST['txtpassR1'])&& isset($_POST['txtpassR2'])) 
+{
+
+    $nuevapass=sha1(strip_tags($_POST['txtpassR1']));
     $id = $_SESSION['users_id'];
-    $password= sha1(strip_tags($_POST['password']));
+    $password= sha1(strip_tags($_POST['txtpasswordA']));
 
     //momento de conectarnos a db
     require_once "../Modelo/Conexion.php";
@@ -19,7 +22,7 @@ if(isset($_POST['txtnombre']) && isset($_POST['txtpasswordA'])) {
     if ($count == 1){
 
       //Insertar los Nuevos Datos xD
-
+      $result = $conn->query("UPDATE `users` SET  `users_password` = '".$nuevapass."' WHERE `users_id` = '".$id."' AND  `users_password` = '".$password."' ");
 
       //echo "<pre>";
       //print_r($devices);
@@ -30,9 +33,8 @@ if(isset($_POST['txtnombre']) && isset($_POST['txtpasswordA'])) {
       die();
 
     }else{
-      $msg .= "Acceso denegado!!!";
+      // $msg .= "Acceso denegado!!!";
       $_SESSION['logged'] = false;
     }
-  }
 }
 ?>
