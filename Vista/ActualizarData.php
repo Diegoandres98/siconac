@@ -8,7 +8,8 @@ require_once("../Modelo/ValidadorDeSession.php");
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="../Modelo/ActualizarDatos.php"  method="post">
+              <!-- <form action="../Modelo/ActualizarDatos.php"  method="post"> -->
+              <form method="post" id="formulariocambio">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Escribe Nuevo Nombre Si Es Necesario</label>
@@ -27,15 +28,17 @@ require_once("../Modelo/ValidadorDeSession.php");
                     <input type="password" class="form-control" name="txtpassR2" placeholder="Password Repetir" required>
                   </div>
 
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <div class="form-check" >
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                     <label class="form-check-label" for="exampleCheck1">Acepto Terminos Y Condiciones</label>
                   </div>
                 </div>
                 <!-- /.card-body -->
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
               </form>
             </div>
+
+<script src="../Funciones/alertadecambiocontraseña.js" ></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

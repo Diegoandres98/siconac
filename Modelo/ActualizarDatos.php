@@ -4,7 +4,9 @@ require_once("../Modelo/ValidadorDeSession.php");
 if(isset($_POST['txtnombre']) && isset($_POST['txtpasswordA']) 
 && isset($_POST['txtpassR1'])&& isset($_POST['txtpassR2'])) 
 {
-
+  if($_POST['txtpassR1']==$_POST['txtpassR2'])
+  {
+    $nombreActual=$_POST['txtnombre'];
     $nuevapass=sha1(strip_tags($_POST['txtpassR1']));
     $id = $_SESSION['users_id'];
     $password= sha1(strip_tags($_POST['txtpasswordA']));
@@ -19,22 +21,37 @@ if(isset($_POST['txtnombre']) && isset($_POST['txtpasswordA'])
     //cuento cuantos elementos tiene $tabla,
     $count = count($users);
 
-    if ($count == 1){
+    if ($count == 1)
+    {
 
       //Insertar los Nuevos Datos xD
-      $result = $conn->query("UPDATE `users` SET  `users_password` = '".$nuevapass."' WHERE `users_id` = '".$id."' AND  `users_password` = '".$password."' ");
+      $result = $conn->query("UPDATE `users` SET  `users_password` = '".$nuevapass."',`users_nombre` = '".$nombreActual."' WHERE `users_id` = '".$id."' AND  `users_password` = '".$password."' ");
 
       //echo "<pre>";
       //print_r($devices);
       //die();
       // header("Location: .$nuevaURL.php");
       // die();
-      header("Location: ../Vista/panel.php");
-      die();
+      echo json_encode(array('success' => 1));
+      // header("Location: ../Vista/panel.php");
+      // die();
 
-    }else{
-      // $msg .= "Acceso denegado!!!";
-      $_SESSION['logged'] = false;
     }
+    else{
+
+      //contrasña mala 
+      echo json_encode(array('success' => 2));
+    }
+  }
+  else
+  {
+    //no coinciden contraseñas nuevas
+    echo json_encode(array('success' => 3));
+  }
+}
+else
+{
+//campos que se enviaron estan complemente vacios 
+echo json_encode(array('success' => 4));
 }
 ?>
