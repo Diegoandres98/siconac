@@ -1,5 +1,5 @@
 <?php
-require_once("../Modelo/ValidadorDeSession.php");
+require_once "../Modelo/ValidadorDeSession.php";
 
 if(isset($_POST['txtnombre']) && isset($_POST['txtpasswordA']) 
 && isset($_POST['txtpassR1'])&& isset($_POST['txtpassR2'])) 

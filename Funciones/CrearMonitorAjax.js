@@ -1,27 +1,30 @@
 $(document).ready(function () {
-    $('#formulariocambio').submit(function (e) {
+    $('#FormRegistroMonitor').submit(function (e) {
         e.preventDefault();
         //captura todos los valores que tiene el formulario es decir todos los input que esten en ese formulario...
-        var datos=$(this).serialize();
+        // var datos=$(this).serialize();
+        var datos=new FormData($('#FormRegistroMonitor')[0]);
+        console.log(datos);
         $.ajax({
             type:"POST",
-            url:"../Modelo/ActualizarDatos.php",
+            processData: false,
+            contentType: false,
+            url:"../Modelo/CrearMonitor.php",
             data:datos,
             success:function(data){
-                var jsonData = JSON.parse(data);
-                console.log(jsonData);
+                 console.log(data);
+                 var jsonData = JSON.parse(data);
+                // console.log(jsonData);
               if(jsonData.success == "1"){
                   Swal.fire({
                       position: 'top-end',
                       icon: 'success',
-                      title: 'Datos Cambiados Correctamente',
+                      title: 'Monitor Creado Con Exito',
                       showConfirmButton: false,
                       timer: 2500
                     })
-                    // window.location="../Vista/panel.php";
-                    // location.href ="../Vista/panel.php";
-                  // setTimeout(window.location="../Vista/panel.php",3000);
               }
+
               if(jsonData.success == "2")
               {
                 Swal.fire({
@@ -48,7 +51,7 @@ $(document).ready(function () {
 
               }
                 //imprimo el resultado en el div mensaje que procesa ajax
-                $("#resultado").html(data);
+                // $("#resultado").html(data);
             }
         });
     });

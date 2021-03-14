@@ -1,4 +1,6 @@
-
+<?php
+require_once "../Modelo/DatosPrincipales.php"
+?>
         <div class="container-fluid">
           <!-- Info boxes -->
           <div class="row">
@@ -24,7 +26,7 @@
 
                 <div class="info-box-content">
                   <span class="info-box-text">Portales</span>
-                  <span class="info-box-number">4</span>
+                  <span class="info-box-number"><?php echo $countD ?></span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -41,7 +43,7 @@
 
                 <div class="info-box-content">
                   <span class="info-box-text">Monitores</span>
-                  <span class="info-box-number">4</span>
+                  <span class="info-box-number"><?php echo $countM ?></span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -54,7 +56,7 @@
 
                 <div class="info-box-content">
                   <span class="info-box-text">Usuarios Activos</span>
-                  <span class="info-box-number">2,000</span>
+                  <span class="info-box-number"><?php echo $countH ?></span>
                 </div>
                 <!-- /.info-box-content -->
               </div>

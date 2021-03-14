@@ -111,7 +111,6 @@ require_once("../Modelo/ValidadorDeSession.php");
             <a href="#" class="d-block"><?php echo $_SESSION['users_nombre']; ?></a>
           </div>
         </div>
-
         <!-- SidebarSearch Form -->
         <div class="form-inline">
           <div class="input-group" data-widget="sidebar-search">
@@ -132,10 +131,10 @@ require_once("../Modelo/ValidadorDeSession.php");
             <li class="nav-header">FUNCIONALIDADES</li>
 
             <li class="nav-item">
-              <a href="pages/widgets.html" class="nav-link">
+              <a href="#" onclick="ubicacion('datosprincipales');" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                  Portales
+                  General
                   <span class="right badge badge-danger">New</span>
                 </p>
               </a>
@@ -151,7 +150,7 @@ require_once("../Modelo/ValidadorDeSession.php");
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/layout/top-nav.html" class="nav-link">
+                  <a href="#" onclick="ubicacion('crearmonitor');" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>New Monitor</p>
                   </a>
@@ -162,12 +161,12 @@ require_once("../Modelo/ValidadorDeSession.php");
                     <p>New Usuario</p>
                   </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a href="pages/layout/boxed.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>New Administrador</p>
                   </a>
-                </li>
+                </li> -->
               </ul>
             </li>
             <li class="nav-item">
@@ -181,9 +180,9 @@ require_once("../Modelo/ValidadorDeSession.php");
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-tree"></i>
-                <p>
-                  Dispositivos
+                <i class="nav-icon fas fa-door-open"></i>
+                <p> 
+                 Portales
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
@@ -191,7 +190,13 @@ require_once("../Modelo/ValidadorDeSession.php");
                 <li class="nav-item">
                   <a href="pages/UI/general.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Agregar Portal</p>
+                    <p>Crear Portal</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/UI/icons.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Asignar Portal</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -261,6 +266,16 @@ require_once("../Modelo/ValidadorDeSession.php");
                   </a>
                 </li>
               </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  Mis Monitores
+                  <span class="right badge badge-danger">New</span>
+                </p>
+              </a>
             </li>
 
             <li class="nav-header">LABELS</li>
@@ -341,6 +356,7 @@ require_once("../Modelo/ValidadorDeSession.php");
   <!-- jQuery -->
   <script src="../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap -->
+  <script src="../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
   <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- overlayScrollbars -->
   <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
