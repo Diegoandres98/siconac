@@ -187,28 +187,20 @@ require_once("../Modelo/ValidadorDeSession.php");
                 </p>
               </a>
               <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                   <a href="#" class="nav-link" onclick="ubicacion('listadeportales');">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                    Mis Portales
+                   <!-- <span class="right badge badge-danger">New</span> -->
+                    </p>
+                   </a>
+                 </li>
+
                 <li class="nav-item">
-                  <a href="pages/UI/general.html" class="nav-link">
+                  <a href="#" class="nav-link" onclick="ubicacion('crearportal');">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Crear Portal</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/UI/icons.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Asignar Portal</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/UI/icons.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Eliminar Portal</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/UI/buttons.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Editar Portal</p>
                   </a>
                 </li>
 
@@ -269,7 +261,7 @@ require_once("../Modelo/ValidadorDeSession.php");
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link" onclick="ubicacion('listademonitores');">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Mis Monitores

@@ -1,5 +1,5 @@
 <?php
-require_once("../Modelo/ValidadorDeSession.php");
+require_once "../Modelo/ValidadorDeSession.php";
 
 $directorio = '../archivos/';
 $subir_archivo = $directorio.basename($_FILES['subir_archivo']['name']);

@@ -65,3 +65,4 @@ require_once "../Modelo/DatosPrincipales.php"
             <!-- /.col -->
           </div>
           <!-- /.row -->
+        </div>
