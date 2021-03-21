@@ -18,6 +18,8 @@ require_once("../Modelo/ValidadorDeSession.php");
     <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+
+    <link rel="stylesheet" href="./vistadecarga.css">
   </head>
   <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed"
    onload="ubicacion('datosprincipales');"
@@ -272,7 +274,7 @@ require_once("../Modelo/ValidadorDeSession.php");
 
             <li class="nav-header">LABELS</li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" onclick="ubicacion('data');" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
                 <p class="text">Important</p>
               </a>

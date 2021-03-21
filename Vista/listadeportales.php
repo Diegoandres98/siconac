@@ -16,18 +16,18 @@
                     <span class="info-box-icon bg-info elevation-1"><i class="fas fa-door-open"></i></span>
     
                     <div class="info-box-content">
-                      <span class="info-box-text">Portal: '.$users[$i]['devices_alias'].'</span>
-                      <span class="info-box-number">ID: '.$users[$i]['devices_id'].' <small>°</small> </span>
-                      <span class="info-box-text">Serial: '.$users[$i]['devices_serie'].'</span>
+                      <span class="info-box-text">Portal: '.$Portales[$i]['devices_alias'].'</span>
+                      <span class="info-box-number">ID: '.$Portales[$i]['devices_id'].' <small>°</small> </span>
+                      <span class="info-box-text">Serial: '.$Portales[$i]['devices_serie'].'</span>
 
                       <div class="text-right">
-                      <a href="#" id="'.$i.'" class="btn btn-sm bg-warning" data-toggle="modal" data-target="#modal-default">
+                      <a href="#" id="'.$i.'" class="btn btn-sm bg-warning vermonitorportal" data-toggle="modal" data-target="#modal-default">
                       <i class="fas fa-info-circle"></i>
                       </a>
-                      <a href="#" id="'.$i.'" class="btn btn-sm bg-success" data-toggle="modal" data-target="#modal-default2">
+                      <a href="#" id="'.$i.'" class="btn btn-sm bg-success aggmonitor" data-toggle="modal" data-target="#modal-default2">
                       <i class="fas fa-user-plus"></i>
                      </a>
-                      <a href="#" id="'.$i.'" class="btn btn-sm bg-danger">
+                      <a href="#" id="'.$i.'" class="btn btn-sm bg-danger borrarportal">
                        <i class="fas fa-trash"></i>
                       </a>
                       <a href="#" id="'.$i.'" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-default3">
@@ -54,11 +54,7 @@
               <li class="page-item active"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
               <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item"><a class="page-link" href="#">6</a></li>
-              <li class="page-item"><a class="page-link" href="#">7</a></li>
-              <li class="page-item"><a class="page-link" href="#">8</a></li>
+
             </ul>
           </nav>
         </div>
@@ -72,16 +68,33 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Ver Monitores a Cargo De Este Portal</h4>
+            <h7 class="modal-title">Monitores Asociados Al Portal:&nbsp;</h7>
+              <h6 class="modal-title info-box-number" id="Label2"> </h6>
+
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>One fine body&hellip;</p>
+            <?php require_once "../Vista/listamonitoresdeportal.php";?>
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              
+              <a id="btnclose" class="btn btn-app bg-success" data-dismiss="modal">
+                <i class="fas fa-sync-alt"></i> Refrescar
+                </a>
+
+<script>
+    $("#btnclose").click(function(){
+        $("#modal-default").modal("hide");
+        // alert("asi es bb");
+        $('.modal-backdrop').remove();
+        ubicacion('listadeportales');
+    });
+
+</script>
+
               <!-- <button type="button" class="btn btn-primary">Guardar</button> -->
             </div>
           </div>
@@ -95,13 +108,17 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Agregar Monitor De La Lista </h4>
+              <h7 class="modal-title">Agregar Monitor De La Lista Al Portal:&nbsp;</h7>
+              <h6 class="modal-title info-box-number" id="Label1"> </h6>
+               
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>One fine body&hellip;</p>
+
+              <?php require_once "../Vista/listademonitores2.php";?>
+              
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -172,15 +189,15 @@
 <script src="../Funciones/EditarPortal.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
-  $(".btn-primary").click(function(){
+$(".btn-primary").click(function(){
   // console.log($(this).attr('id'));
   var Identificador=$(this).attr('id');
 
   console.log(Identificador);
-  var userEnJavaScript = <?php echo json_encode($users); ?>;
-  var Id= userEnJavaScript[Identificador]['devices_id'];
-  var alias= userEnJavaScript[Identificador]['devices_alias'];
-  var serie= userEnJavaScript[Identificador]['devices_serie'];
+  var PortalEnJavaScript = <?php echo json_encode($Portales); ?>;
+  var Id= PortalEnJavaScript[Identificador]['devices_id'];
+  var alias= PortalEnJavaScript[Identificador]['devices_alias'];
+  var serie= PortalEnJavaScript[Identificador]['devices_serie'];
 
   $("#Id").val(Id);
   $("#nombreP").val(alias);
@@ -188,3 +205,4 @@
 
 });
 </script>
+<?php require_once "../Funciones/funcionesjsconphp.php"; ?>

@@ -16,8 +16,10 @@ $(document).ready(function () {
                       showConfirmButton: false,
                       timer: 1500
                     })
+
+                      window.location.href = "../Vista/panel.php";
                     // window.location="../Vista/panel.php";
-                    location.href ="../Vista/panel.php";
+                    // location.href =
                   // setTimeout(window.location="../Vista/panel.php",3000);
               }
               else
