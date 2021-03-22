@@ -141,11 +141,9 @@
   
   $(document).on('click', '.dltmonpor', function () { 
     var Identificador=$(this).attr('id');
-    var PortalEnJavaScript = <?php echo json_encode($Portales); ?>;
-    var IdPortal= PortalEnJavaScript[Identificador]['devices_id'];
-    // var cualeliminar=$(this).attr('id');
+
     var parametros = {
-                "IdPortal" : IdPortal
+                "IdMonitorAsignado" : Identificador
         };
         $.ajax({
                 data:  parametros, //datos que se envian a traves de ajax

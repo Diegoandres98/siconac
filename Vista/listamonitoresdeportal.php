@@ -87,6 +87,5 @@
 <input type="hidden" name="IdPortal" id="IdPortal" value="">
 </form> -->
 
-<?php require_once "../Funciones/funcionesjsconphp.php"; ?>
 </body>
 </html>

@@ -28,6 +28,16 @@ $(document).ready(function () {
               {
                 Swal.fire({
                 icon: 'error',
+                title: 'Parece Que Este Portal Ya Existe, Revisa Por Favor',
+                text: 'Para poder crear otro portal debes usar otro numero de serie',
+                // footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
+                })
+                // location.href ="../Vista/panel.php";
+              }
+              if(jsonData.success == "3")
+              {
+                Swal.fire({
+                icon: 'error',
                 title: 'Parece que de una forma fraudelenta no estas poniendo los datos',
                 text: 'Para poder crear un portal, ingrese los datos correctamente',
                 // footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'

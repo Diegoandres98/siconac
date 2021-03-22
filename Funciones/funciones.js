@@ -8,7 +8,10 @@ $(document).ready(function () {
             url:"../Modelo/login.php",
             data:datos,
             success:function(data){
-              if(data==1){
+
+              var jsonData = JSON.parse(data);
+
+              if(jsonData.success == "1"){
                   Swal.fire({
                       position: 'top-end',
                       icon: 'success',
@@ -22,12 +25,22 @@ $(document).ready(function () {
                     // location.href =
                   // setTimeout(window.location="../Vista/panel.php",3000);
               }
-              else
+              if(jsonData.success == "2")
               {
                 Swal.fire({
                 icon: 'error',
                 title: 'Datos Incorrectos...',
                 text: 'Para poder ingresar rectifica los datos suministrados',
+                footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
+                })
+                // location.href ="../Vista/panel.php";
+              }
+              if(jsonData.success == "3")
+              {
+                Swal.fire({
+                icon: 'error',
+                title: 'Los Campos Estan Vacios',
+                text: 'De Forma Fraudenleta Quitaste Los Requerid',
                 footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
                 })
                 // location.href ="../Vista/panel.php";
