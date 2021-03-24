@@ -2,7 +2,7 @@
 require_once "../Modelo/ListaDeMonitores.php";
 ?>
     <!-- Main content -->
-    <section class="content">
+    <section class="content">,
 
       <!-- Default box -->
       <div class="card card-solid">
@@ -37,7 +37,7 @@ require_once "../Modelo/ListaDeMonitores.php";
                     <a href="#" id="'.$i.'" class="btn btn-sm bg-danger borrarMonitor">
                      <i class="fas fa-trash"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-success">
+                    <a href="#" id="'.$i.'" class="btn btn-sm btn-success verPortalesAsociados" data-toggle="modal" data-target="#modal-listPort" >
                      <i class="fas fa-eye"></i> Ver Mas
                     </a>
                   </div>
@@ -48,10 +48,36 @@ require_once "../Modelo/ListaDeMonitores.php";
             $i++;
             endwhile;
             ?>
-
-
           </div>
         </div>
+
+        <div class="modal fade" id="modal-listPort">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h7 class="modal-title">Portales Asignados a:&nbsp;</h7>
+              <h6 class="modal-title info-box-number" id="Label5"> </h6>
+               
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <?php require_once "../Vista/listadeportalesdelmonitor.php";?>
+         
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <!-- <button type="button" class="btn btn-primary">Guardar</button> -->
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+
         <!-- /.card-body -->
         <div class="card-footer">
           <nav aria-label="Contacts Page Navigation">
