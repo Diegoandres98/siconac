@@ -218,9 +218,9 @@ require_once("../Modelo/ValidadorDeSession.php");
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/forms/general.html" class="nav-link">
+                  <a href="#" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Agregar</p>
+                    <p>Asignar</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -238,6 +238,20 @@ require_once("../Modelo/ValidadorDeSession.php");
 
               </ul>
             </li>
+
+
+            <li class="nav-item">
+              <a href="#" class="nav-link" onclick="ubicacion('listademonitores');">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  Mis Monitores
+                  <span class="right badge badge-danger">New</span>
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-header">Del Software</li>
+
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
@@ -250,45 +264,28 @@ require_once("../Modelo/ValidadorDeSession.php");
                 <li class="nav-item">
                   <a href="pages/tables/simple.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Fallo</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/tables/data.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Sugerencia</p>
+                    <p>Fallo o Sugerencia</p>
                   </a>
                 </li>
               </ul>
             </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link" onclick="ubicacion('listademonitores');">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  Mis Monitores
-                  <span class="right badge badge-danger">New</span>
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-header">LABELS</li>
+            <li class="nav-header">Enviar Alertas a Monitores</li>
             <li class="nav-item">
               <a href="#" onclick="ubicacion('data');" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
-                <p class="text">Important</p>
+                <p class="text">Importante</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon far fa-circle text-warning"></i>
-                <p>Warning</p>
+                <p>Tener En Cuenta</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon far fa-circle text-info"></i>
-                <p>Informational</p>
+                <p>Informacion</p>
               </a>
             </li>
           </ul>
