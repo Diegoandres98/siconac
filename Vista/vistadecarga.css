@@ -2,7 +2,10 @@
 *{
   box-sizing: border-box;
 }
-
+ul.navega li {
+  display: inline;
+  padding-right: 0.5em;
+}
 .cardPropio {
   position: relative;
   display: -ms-flexbox;

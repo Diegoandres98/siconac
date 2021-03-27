@@ -17,6 +17,10 @@ require_once("../Modelo/ValidadorDeSession.php");
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Contraseña Actual</label>
+                    <input type="email" class="form-control" name="txtcorreo" value="<?php echo $_SESSION['users_email'];?>">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña Actual</label>
                     <input type="password" class="form-control" name="txtpasswordA" placeholder="Password Actual" required>
                   </div>
                   <div class="form-group">

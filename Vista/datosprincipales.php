@@ -1,6 +1,8 @@
 <?php
 require_once "../Modelo/DatosPrincipales.php"
 ?>
+
+
         <div class="container-fluid">
           <!-- Info boxes -->
           <div class="row">
@@ -66,3 +68,57 @@ require_once "../Modelo/DatosPrincipales.php"
           </div>
           <!-- /.row -->
         </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">Reporte Estadistico Del Trafico De Hoy:</h5>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <div class="btn-group">
+                  </div>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="text-center">
+                      <strong><?php date_default_timezone_set("America/Bogota");
+                      $hoy = date("Y-m-d");
+                      $date = new DateTime($hoy );
+                      // En la siguiente linea defines la manera como quieres que se muestr tu fecha, puedes agregar o quitar los campos que desees,segun tus necesidades. Por ejemplo:
+                      echo $date->format('l jS \of F Y '); ?></strong>
+                    </p>
+
+                    <div class="chart">
+                      <!-- Sales Chart Canvas -->
+                      <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
+                    </div>
+                    <!-- /.chart-responsive -->
+                  </div>
+                  <!-- /.col -->
+
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- ./card-body -->
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <!-- REQUIRED SCRIPTS -->
+
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../dist/js/pages/dashboard2.js"></script>

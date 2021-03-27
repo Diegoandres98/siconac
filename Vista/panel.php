@@ -271,7 +271,7 @@ require_once("../Modelo/ValidadorDeSession.php");
             </li>
             <li class="nav-header">Enviar Alertas a Monitores</li>
             <li class="nav-item">
-              <a href="#" onclick="ubicacion('data');" class="nav-link">
+              <a href="#" onclick="ubicacion('enviaralerta');" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
                 <p class="text">Importante</p>
               </a>

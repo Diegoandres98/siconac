@@ -1,12 +1,13 @@
 <?php
 require_once "../Modelo/ValidadorDeSession.php";
 
-if(isset($_POST['txtnombre']) && isset($_POST['txtpasswordA']) 
-&& isset($_POST['txtpassR1'])&& isset($_POST['txtpassR2'])) 
+if(!empty($_POST['txtnombre']) && !empty($_POST['txtpasswordA']) 
+&& !empty($_POST['txtpassR1'])&& !empty($_POST['txtpassR2'])&& !empty($_POST['txtcorreo'])) 
 {
   if($_POST['txtpassR1']==$_POST['txtpassR2'])
   {
     $nombreActual=$_POST['txtnombre'];
+    $nuevocorreo=$_POST['txtcorreo'];
     $nuevapass=sha1(strip_tags($_POST['txtpassR1']));
     $id = $_SESSION['users_id'];
     $password= sha1(strip_tags($_POST['txtpasswordA']));
@@ -25,7 +26,7 @@ if(isset($_POST['txtnombre']) && isset($_POST['txtpasswordA'])
     {
 
       //Insertar los Nuevos Datos xD
-      $result = $conn->query("UPDATE `users` SET  `users_password` = '".$nuevapass."',`users_nombre` = '".$nombreActual."' WHERE `users_id` = '".$id."' AND  `users_password` = '".$password."' ");
+      $result = $conn->query("UPDATE `users` SET  `users_password` = '".$nuevapass."',`users_nombre` = '".$nombreActual."',`users_email` = '".$nuevocorreo."' WHERE `users_id` = '".$id."' AND  `users_password` = '".$password."' ");
 
       //echo "<pre>";
       //print_r($devices);
