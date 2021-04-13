@@ -1,6 +1,20 @@
+<script>
+  document.querySelector('#Label9').innerText = "Crear Portal";
+  document.querySelector('#Label8').innerText = "Crear Portal";
+</script>
+
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+    <br>
+    <br>
+    <br>
+    </div>
+  </div>
+
         <div class="row">
           <!-- left column -->
+          <div class="col-md-3"></div>
           <div class="col-md-6">
 <!-- Horizontal Form -->
             <div class="card card-info">

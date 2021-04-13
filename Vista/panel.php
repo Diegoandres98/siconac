@@ -33,7 +33,7 @@ require_once("../Modelo/ValidadorDeSession.php");
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="index3.html" class="nav-link">Principal</a>
+          <a href="../Vista/panel.php" class="nav-link">Principal</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Soporte</a>
@@ -64,23 +64,19 @@ require_once("../Modelo/ValidadorDeSession.php");
 
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="fas fa-user-cog"></i>  <?php echo $_SESSION['users_nombre']; ?>
+            <i class="fas fa-user-cog"></i> 
             <!-- <span class="badge badge-warning navbar-badge">15</span> -->
           </a>
           <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
             <span class="dropdown-item dropdown-header"> <?php echo $_SESSION['users_nombre']; ?>
-              <img src="../img/Siconac.png"
-                 alt="Siconac Logo" class="brand-image img-circle elevation-3"
-                 style="opacity: .8" width="30%" height="30%">
-
             </span>
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item" onclick="ubicacion('ActualizarData');">
               <i class="fas fa-user-edit"></i>  Editar Perfil
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-users mr-2"></i> 8 friend requests
+            <a href="#" class="dropdown-item" onclick="ubicacion('ActualizarInfoInstitucional');">
+              <i class="fas fa-university"></i> Editar Datos <br> Institucionales
             </a>
             <div class="dropdown-divider"></div>
             <a href="../Modelo/CerrarSession.php" class="dropdown-item">
@@ -154,13 +150,13 @@ require_once("../Modelo/ValidadorDeSession.php");
                 <li class="nav-item">
                   <a href="#" onclick="ubicacion('crearmonitor');" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>New Monitor</p>
+                    <p>Nuevo Monitor</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="#" onclick="ubicacion('crearusuario(s)');" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>New Usuario</p>
+                    <p>Nuevo Usuario</p>
                   </a>
                 </li>
                 <!-- <li class="nav-item">
@@ -218,24 +214,29 @@ require_once("../Modelo/ValidadorDeSession.php");
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="#" onclick="ubicacion('asignartarget');" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Asignar</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/forms/advanced.html" class="nav-link">
+                  <a href="#" onclick="ubicacion('REasignartarget');" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Eliminar</p>
+                    <p>ReAsignar</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/forms/editors.html" class="nav-link">
+                  <a href="#" onclick="ubicacion('suspendercliente');" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Bloquear</p>
+                    <p>Suspender Usuario</p>
                   </a>
                 </li>
-
+                <li class="nav-item">
+                  <a href="#" onclick="ubicacion('reactivarcliente');" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>ReActivar Usuario</p>
+                  </a>
+                </li>
               </ul>
             </li>
 
@@ -250,7 +251,7 @@ require_once("../Modelo/ValidadorDeSession.php");
               </a>
             </li>
 
-            <li class="nav-header">Del Software</li>
+            <li class="nav-header">Consultas</li>
 
             <li class="nav-item">
               <a href="#" class="nav-link">
@@ -262,16 +263,28 @@ require_once("../Modelo/ValidadorDeSession.php");
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/tables/simple.html" class="nav-link">
+                  <a href="#" onclick="ubicacion('listadodeclientes');" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Fallo o Sugerencia</p>
+                    <p>Listado De Usuarios <br> Registrados</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" onclick="ubicacion('trazabilidadclientes');" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver Trazabilidad de <br> Usuario, en portales</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" onclick="ubicacion('vertodoeltrafico');" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver Trafico</p>
                   </a>
                 </li>
               </ul>
             </li>
             <li class="nav-header">Enviar Alertas a Monitores</li>
             <li class="nav-item">
-              <a href="#" onclick="ubicacion('enviaralerta');" class="nav-link">
+              <a href="#" onclick="ubicacion('enviaralerta');funcion1();" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
                 <p class="text">Importante</p>
               </a>
@@ -303,12 +316,12 @@ require_once("../Modelo/ValidadorDeSession.php");
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Panel De Control</h1>
+              <h1 id="Label9" class="m-0">Resumen de datos</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Panel De Control</li>
+                <li class="breadcrumb-item"><a href="../Vista/panel.php">Home</a></li>
+                <li id="Label8" class="breadcrumb-item active">Resumen de datos</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -340,7 +353,7 @@ require_once("../Modelo/ValidadorDeSession.php");
     </footer>
   </div>
   <!-- ./wrapper -->
-
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="../Controlador/CargadorPagina.js"></script>
 
   <!-- REQUIRED SCRIPTS -->

@@ -1,13 +1,45 @@
 $(document).ready(function () {
+  
+  $('#EnviarMensaje').click(function (e) {
+    e.preventDefault();
     
-    $('#formulariocambio').submit(function (e) {
-        e.preventDefault();
-        //captura todos los valores que tiene el formulario es decir todos los input que esten en ese formulario...
-        var datos=$(this).serialize();
+    var arreglodepersonas= [];
+      // para cada checkbox "chequeado"
+      var ps=0;
+      $("input[type=checkbox]:checked").each(function(){
+        result=[];
+        var i = 0;
+        
+        // buscamos el td más cercano en el DOM hacia "arriba"
+        // luego encontramos los td adyacentes a este
+        $(this).closest('td').siblings().each(function(){
+    
+          // obtenemos el texto del td 
+          result[i]= $(this).text();
+          ++i;
+        });
+        arreglodepersonas[ps]=result[0];
+        console.log(arreglodepersonas[ps]);
+        ++ps;
+      });
+
+      Tag=$("#seleccion").val();
+      AsuntoMensaje= $("#AsuntoMensaje").val();
+      Texto=$("#compose-textarea").val();
+      // var jsonPersonas =JSON.stringify(arreglodepersonas);
+      //  console.log(JSON.stringify(arreglodepersonas));
+
+      var parametros = {
+        'Tag' : Tag,
+        'AsuntoMensaje' : AsuntoMensaje,
+        'Texto' : Texto,
+        'Destinatarios': JSON.stringify(arreglodepersonas)
+      };
+
         $.ajax({
             type:"POST",
-            url:"../Modelo/ActualizarDatos.php",
-            data:datos,
+            url:"../Modelo/Chat.php",
+            data:parametros,
             success:function(data){
                 var jsonData = JSON.parse(data);
                 console.log(jsonData);
@@ -15,13 +47,13 @@ $(document).ready(function () {
                   Swal.fire({
                       position: 'top-end',
                       icon: 'success',
-                      title: 'Datos Cambiados Correctamente',
+                      title: 'Mensajes Enviados Con Exito',
                       showConfirmButton: false,
                       timer: 2500
                     })
-                    // window.location="../Vista/panel.php";
-                    // location.href ="../Vista/panel.php";
-                  // setTimeout(window.location="../Vista/panel.php",3000);
+
+                    ubicacion("enviaralerta");
+
               }
               if(jsonData.success == "2")
               {

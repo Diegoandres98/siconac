@@ -1,4 +1,10 @@
 <link rel="stylesheet" href="../Vista/vistadecarga.css">
+
+<script>
+  document.querySelector('#Label9').innerText = "Agregar Usuario";
+  document.querySelector('#Label8').innerText = "Agregar Usuario";
+</script>
+
 <div class="row">
     <!-- left column -->
     <div class="col-md-2"></div>

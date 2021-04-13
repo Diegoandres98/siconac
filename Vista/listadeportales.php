@@ -2,6 +2,11 @@
     require_once "../Modelo/ValidadorDeSession.php";
     require_once "../Modelo/ListaDePortales.php";
     ?>
+
+<script>
+  document.querySelector('#Label9').innerText = "Lista De Portales";
+  document.querySelector('#Label8').innerText = "Lista De Portales";
+</script>
     <!-- Main content -->
     <section class="content">
 
@@ -193,7 +198,6 @@ $(".btn-primary").click(function(){
   // console.log($(this).attr('id'));
   var Identificador=$(this).attr('id');
 
-  console.log(Identificador);
   var PortalEnJavaScript = <?php echo json_encode($Portales); ?>;
   var Id= PortalEnJavaScript[Identificador]['devices_id'];
   var alias= PortalEnJavaScript[Identificador]['devices_alias'];
