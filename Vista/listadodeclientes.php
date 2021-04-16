@@ -50,10 +50,10 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
                                     <td>' . $asignado . '</td>
                                     <td>' . $status . '</td>
                                     <td>
-                                        <a href="#" id="' . $i . '" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-default3">
+                                        <a href="#" id="' .$i. '" class="btn btn-sm btn-primary BtnActiModal" data-toggle="modal" data-target="#modal-default3">
                                         <i class="fas fa-edit"></i> 
                                         </a>
-                                        <a href="#" id="' . $i . '" class="btn btn-sm bg-danger borrarportal">
+                                        <a href="#" id="' .$i. '" class="btn btn-sm bg-danger borrarportal">
                                         <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
@@ -102,7 +102,7 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form class="form-horizontal" method="post" id="editarportal">
+                    <form class="form-horizontal" method="post" id="editarcliente">
                         <div class="card-body">
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-3 col-form-label">Nombre Usuario</label>
@@ -120,7 +120,7 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-info">Guardar</button>
+                            <button type="submit" class="btn btn-info">Guardar Cambios</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>
@@ -157,61 +157,25 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
 
-<script>
-    $(".borrarportal").click(function() {
+<script src="../Funciones/EditarDatosDelCliente.js"></script>
 
-        var Identificador = $(this).attr('id');
+<script >
+$(".BtnActiModal").click(function(){
+  // console.log($(this).attr('id'));
+  var Identificador=$(this).attr('id');
 
-        Swal.fire({
-            title: 'Seguro Quieres Borrar Este Portal?',
-            text: "No podas revertir la accion",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: '¡Si, Borrar!'
-        }).then((result) => {
-            if (result.isConfirmed) {
+  var ClientesEnJavaScript = <?php echo json_encode($ListadoDeClientes); ?>;
+  var Id= ClientesEnJavaScript[Identificador]['client_id'];
+  var alias= ClientesEnJavaScript[Identificador]['client_name'];
+  var serie= ClientesEnJavaScript[Identificador]['client_identificacion'];
 
-                var parametros = {
-                    "IdPortal": IdPortal
-                };
-                $.ajax({
-                    data: parametros, //datos que se envian a traves de ajax
-                    url: '../Modelo/EliminarPortal.php', //archivo que recibe la peticion
-                    type: 'post', //método de envio
-                    success: function(response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-                        // $("#resultado").html(response);
-                        var jsonData = JSON.parse(response);
+  $("#Id").val(Id);
+  $("#nombreP").val(alias);
+  $("#numS").val(serie);
 
-                        if (jsonData.success == "1") {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: 'Monitor Retirado Del Portal Con Exito',
-                                showConfirmButton: false,
-                                timer: 2500
-                            })
-                            ubicacion('listadeportales');
-                            // window.location="../Vista/panel.php";
-                            // location.href ="../Vista/panel.php";
-                            // setTimeout(window.location="../Vista/panel.php",3000);
-                        }
-                        if (jsonData.success == "2") {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Parece Que este monitor ya estaba retirado',
-                                text: 'Prueba Refrescando Esta Pagina',
-                                // footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
-                            })
-                            // location.href ="../Vista/panel.php";
-                        }
-                    }
-                });
-            }
-        })
-    });
+});
 </script>
+
 
 <script>
     $(function() {

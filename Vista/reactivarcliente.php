@@ -21,8 +21,9 @@
                   <div class="row">
                       <div class="col-md-12">
                           <div class="form-group">
+                          <label>Listado De Usuarios que estan suspendidos</label>
                               <label>Escribe numero de cedula:</label>
-                              <select id="miSelect" class="select2" style="width: 100%;">
+                              <select id="miSelect91" class="select2" style="width: 100%;">
                                   <option selected>Elige Un Estudiante De Aqui</option>
                               </select>
                           </div>
@@ -34,7 +35,7 @@
                               </div>
                               <!-- /.card-header -->
                               <!-- form start -->
-                              <form id="formularioenviodata">
+                              <form id="formularioenviodata4">
                                   <div class="card-body">
                                       <div class="form-group">
                                           <label for="exampleInputEmail1">Nombre</label>
@@ -46,16 +47,7 @@
                                       </div>
                                   </div>
                                   <div class="card-footer">
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp;
-                                      <button type="submit" class="btn btn-primary">Registrar</button>
+                                      <button type="submit" class="btn btn-primary">Reactivar</button>
 
                                   </div>
                               </form>
@@ -88,3 +80,4 @@
           document.getElementById("viewDato").innerHTML = x;
       }
   </script>
+      <script src="../Funciones/ReactivarCliente.js"></script>

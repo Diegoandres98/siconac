@@ -8,7 +8,7 @@ $(document).ready(function () {
             url:"../Modelo/EditarPortal.php",
             data:datos,
             success:function(data){
-                console.log(data);
+                console.log("diego estrada");
                 var jsonData = JSON.parse(data);
                 console.log(jsonData);
               if(jsonData.success == "1"){
@@ -20,9 +20,11 @@ $(document).ready(function () {
                       showConfirmButton: false,
                       timer: 2500
                     })
-                    // window.location="../Vista/panel.php";
-                    // location.href ="../Vista/panel.php";
-                  // setTimeout(window.location="../Vista/panel.php",3000);
+                    
+                    $("#modal-default").modal("hide");
+                    // alert("asi es bb");
+                    $('.modal-backdrop').remove();
+                    ubicacion('listadeportales');
               }
               if(jsonData.success == "2")
               {
@@ -34,9 +36,6 @@ $(document).ready(function () {
                 })
                 // location.href ="../Vista/panel.php";
               }
-
-                //imprimo el resultado en el div mensaje que procesa ajax
-                $("#resultado").html(data);
             }
         });
     });

@@ -21,8 +21,9 @@
                   <div class="row">
                       <div class="col-md-12">
                           <div class="form-group">
+                              <label>Listado De Usuarios que estan con tarjeta activa</label>
                               <label>Escribe numero de cedula:</label>
-                              <select id="miSelect" class="select2" style="width: 100%;">
+                              <select id="miSelect90" class="select2" style="width: 100%;">
                                   <option selected>Elige Un Estudiante De Aqui</option>
                               </select>
                           </div>
@@ -34,7 +35,7 @@
                               </div>
                               <!-- /.card-header -->
                               <!-- form start -->
-                              <form id="formularioenviodata">
+                              <form id="formularioenviodata3">
                                   <div class="card-body">
                                       <div class="form-group">
                                           <label for="exampleInputEmail1">Nombre</label>
@@ -46,15 +47,6 @@
                                       </div>
                                   </div>
                                   <div class="card-footer">
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp; &nbsp;
-                                      &nbsp; &nbsp; &nbsp;
                                       <button type="submit" class="btn btn-primary">Suspender</button>
 
                                   </div>
@@ -82,9 +74,4 @@
           $('.select2').select2()
       });
   </script>
-  <script>
-      function myFunction() {
-          var x = document.getElementById("myInput").value;
-          document.getElementById("viewDato").innerHTML = x;
-      }
-  </script>
+  <script src="../Funciones/SuspenderCliente.js"></script>

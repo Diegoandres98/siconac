@@ -46,8 +46,6 @@ $(document).ready(function () {
                   let arraysJsonData = JSON.parse(data);
                   let array_1 = arraysJsonData[0];
                   let array_2 = arraysJsonData[1];
-
-                 console.log(array_1);
   
                 //  console.log(arraysJsonData);
                  $("#FormRegistroUsuarios")[0].reset();

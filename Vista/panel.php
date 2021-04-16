@@ -35,13 +35,13 @@ require_once("../Modelo/ValidadorDeSession.php");
         <li class="nav-item d-none d-sm-inline-block">
           <a href="../Vista/panel.php" class="nav-link">Principal</a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
+        <!-- <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Soporte</a>
-        </li>
+        </li> -->
       </ul>
 
       <!-- SEARCH FORM -->
-      <form class="form-inline ml-3">
+      <!-- <form class="form-inline ml-3">
         <div class="input-group input-group-sm">
           <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Search">
           <div class="input-group-append">
@@ -50,7 +50,7 @@ require_once("../Modelo/ValidadorDeSession.php");
             </button>
           </div>
         </div>
-      </form>
+      </form> -->
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
@@ -268,12 +268,7 @@ require_once("../Modelo/ValidadorDeSession.php");
                     <p>Listado De Usuarios <br> Registrados</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="#" onclick="ubicacion('trazabilidadclientes');" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Ver Trazabilidad de <br> Usuario, en portales</p>
-                  </a>
-                </li>
+
                 <li class="nav-item">
                   <a href="#" onclick="ubicacion('vertodoeltrafico');" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
@@ -284,19 +279,19 @@ require_once("../Modelo/ValidadorDeSession.php");
             </li>
             <li class="nav-header">Enviar Alertas a Monitores</li>
             <li class="nav-item">
-              <a href="#" onclick="ubicacion('enviaralerta');funcion1();" class="nav-link">
+              <a href="#" onclick="ubicacion('enviaralerta');" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
                 <p class="text">Importante</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" onclick="ubicacion('enviaralerta2');" class="nav-link">
                 <i class="nav-icon far fa-circle text-warning"></i>
                 <p>Tener En Cuenta</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" onclick="ubicacion('enviaralerta3');" class="nav-link">
                 <i class="nav-icon far fa-circle text-info"></i>
                 <p>Informacion</p>
               </a>
@@ -320,7 +315,7 @@ require_once("../Modelo/ValidadorDeSession.php");
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="../Vista/panel.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="../Vista/panel.php">Inicio</a></li>
                 <li id="Label8" class="breadcrumb-item active">Resumen de datos</li>
               </ol>
             </div><!-- /.col -->

@@ -39,7 +39,7 @@ require_once "../Modelo/ListaDeMonitores.php";
                     <a href="#" id="' . $i . '" class="btn btn-sm bg-danger borrarMonitor">
                      <i class="fas fa-trash"></i>
                     </a>
-                    <a href="#" id="' . $i . '" class="btn btn-sm btn-success verPortalesAsociados" data-toggle="modal" data-target="#modal-listPort" >
+                    <a href="#" id="' . $Monitores[$i]['users_id'] . '" class="btn btn-sm btn-success verPortalesAsociados" data-toggle="modal" data-target="#modal-listPort" >
                      <i class="fas fa-eye"></i> Ver Mas
                     </a>
                   </div>

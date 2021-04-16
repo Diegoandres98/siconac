@@ -100,10 +100,10 @@ require_once "../Modelo/DatosPrincipales.php"
       <div class="d-none d-xl-block d-none d-md-block d-lg-none d-none d-lg-block d-xl-none">
         <div class="info-boxDiego mb-3">
 
-        <div class="info-box-content">
-              <span class="info-box-negrita"><?php echo $DatosInfo[0]["Datos_Nombre"]; ?></span>
-              <img class="LogoEmpresa" src="<?php echo $DatosInfo[0]["Datos_Foto"]; ?>" alt="logo empresa">
-            </div>
+          <div class="info-box-content">
+            <p class="info-box-negrita"><?php echo $DatosInfo[0]["Datos_Nombre"]; ?></p>
+            <img class="LogoEmpresa" src="<?php echo $DatosInfo[0]["Datos_Foto"]; ?>" alt="logo empresa">
+          </div>
 
 
           <!-- /.info-box-content -->
@@ -167,38 +167,35 @@ require_once "../Modelo/DatosPrincipales.php"
 <!-- REQUIRED SCRIPTS -->
 
 <style>
-.LogoEmpresa
-{
+  .LogoEmpresa {
 
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  height: 60%;
-  position: relative;
-  top: 8%;
-  /* border: 3px solid #d0d0d0; */
-  border-radius: 20%;
-}
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 120px;
+    position: relative;
+    border-radius: 20%;
+  }
 
-.info-boxDiego {
+  .info-boxDiego {
     box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
     border-radius: .25rem;
     background-color: #fff;
     display: -ms-flexbox;
     display: flex;
+    overflow: hidden;
     margin-bottom: 1rem;
     height: 200px;
     padding: .5rem;
     position: relative;
     width: 100%;
-}
-.info-box-negrita
-{
-  position: relative;
-  left: 8%;
-  font-weight: bold;
-}
+  }
+
+  .info-box-negrita {
+    position: relative;
+    font-weight: 600;
+    text-align: center;
+  }
 </style>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard2.js"></script>

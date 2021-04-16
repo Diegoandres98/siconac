@@ -9,7 +9,6 @@ $(document).ready(function () {
             data:datos,
             success:function(data){
                 var jsonData = JSON.parse(data);
-                console.log(jsonData);
               if(jsonData.success == "1"){
                   Swal.fire({
                       position: 'top-end',

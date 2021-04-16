@@ -36,9 +36,9 @@
                                 <input type="file" class="custom-file-input" name="subir_archivo" accept=".jpg, .png">
                                 <label class="custom-file-label" for="exampleInputFile">Escoger Archivo</label>
                             </div>
-                            <div class="input-group-append">
+                            <!-- <div class="input-group-append">
                                 <span class="input-group-text">Subir</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="form-check">
@@ -54,6 +54,14 @@
         </div>
     </div>
 </div>
+
+<style>
+    /* codigo que le cambia el nombre de browse a buscar */
+.custom-file-label::after {
+  content: "Buscar" !important ;
+}
+</style>
+
 <script>
     $(function() {
         bsCustomFileInput.init();

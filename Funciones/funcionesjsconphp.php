@@ -103,7 +103,7 @@ require_once "../Modelo/ListaMonitoresPortal.php";
     var PortalEnJavaScript = <?php echo json_encode($Portales); ?>;
     var MonitorEnJavaScript = <?php echo json_encode($Monitores); ?>;
     var IdPortal = PortalEnJavaScript[Identificador]['devices_id'];
-    console.log(IdPortal);
+    // console.log(IdPortal);
     // $("#IdMonitor").val(IdMonitor);
     var alias = PortalEnJavaScript[Identificador]['devices_alias'];
     document.querySelector('#Label2').innerText = alias;
@@ -113,12 +113,10 @@ require_once "../Modelo/ListaMonitoresPortal.php";
     for (let item in MonitoresDePortalEnJs) {
       // console.log(MonitoresDePortalEnJs[item]['mp_id_portal']);
       if (MonitoresDePortalEnJs[item]['mp_id_portal'] == IdPortal) {
-        console.log(MonitoresDePortalEnJs[item]['mp_id_monitors']);
+        // console.log(MonitoresDePortalEnJs[item]['mp_id_monitors']);
 
         for (let x in MonitorEnJavaScript) {
           if (MonitoresDePortalEnJs[item]['mp_id_monitors'] == MonitorEnJavaScript[x]['users_id']) {
-            MonitorEnJavaScript[x]['users_nombre'];
-            MonitorEnJavaScript[x]['users_email'];
 
             var fila = '<tr id="row' + x + '" class="claseid" ><td>' + MonitorEnJavaScript[x]['users_nombre'] + '</td><td>' + MonitorEnJavaScript[x]['users_email'] + '</td><td> <a href="#" id="' + MonitoresDePortalEnJs[item]['mp_id_mp'] + '" class="dltmonpor btn btn-sm bg-danger" name="Id"> <i class="fas fa-trash"></i> </a> </td> </tr>'; //esto seria lo que contendria la fila
             // <td style="display:none;" >' + MonitoresDePortalEnJs[item]['mp_id_mp'] + '</td>
@@ -131,14 +129,18 @@ require_once "../Modelo/ListaMonitoresPortal.php";
     }
 
   });
-
-  $(document).on('click', '.dltmonpor', function() {
+  
+  var contador=0;
+  $(document).on('click', ".dltmonpor", function() {
+    
     var Identificador = $(this).attr('id');
 
     var parametros = {
       "IdMonitorAsignado": Identificador
     };
-    $.ajax({
+    if (contador==0) {
+      $.ajax({
+      async: false,
       data: parametros, //datos que se envian a traves de ajax
       url: '../Modelo/EliminarMonitorDelPortal.php', //archivo que recibe la peticion
       type: 'post', //método de envio
@@ -157,15 +159,20 @@ require_once "../Modelo/ListaMonitoresPortal.php";
             showConfirmButton: false,
             timer: 2500
           })
-          // window.location="../Vista/panel.php";
-          // location.href ="../Vista/panel.php";
-          // setTimeout(window.location="../Vista/panel.php",3000);
+          //  location.reload();
+
+          $("#modal-default").modal("hide");
+          // alert("asi es bb");
+          $('.modal-backdrop').remove();
+          // ubicacion('datosprincipales');
+            ubicacion('listadeportales');
+
         }
         if (jsonData.success == "2") {
           Swal.fire({
             icon: 'error',
             title: 'Parece Que este monitor ya estaba retirado',
-            text: 'Prueba Refrescando Esta Pagina',
+            text: 'Prueba Refrescando Esta Paginaa',
             // footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
           })
           // location.href ="../Vista/panel.php";
@@ -181,6 +188,9 @@ require_once "../Modelo/ListaMonitoresPortal.php";
         }
       }
     });
+    contador++;
+    }
+
 
   });
 

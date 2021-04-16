@@ -84,19 +84,18 @@
   position: relative;
   margin: auto;
 }
-.contenedorImg .card{
+.contenedorImg .card {
   width: 80%;
   height: 50%;
   /* background: #ccc; */
-  background: linear-gradient(to top,  #fff, rgb(158, 158, 158));
+  background: linear-gradient(to top, #fff, rgb(158, 158, 158));
   border-radius: 15px;
   top: 25%;
   left: 10%;
   position: absolute;
   border: 2px solid rgb(2, 180, 180);
-  /* box-shadow: 0px 0px 15px  #FFF; */
-  
-  box-shadow: -20px 20px 10px rgba(0, 0, 0, .3);
+  /* box-shadow: 0px 0px 15px #fff; */
+  box-shadow: -20px 20px 10px rgb(0 0 0 / 20%);
   transform: rotate(-45deg);
 }
 .contenedorImg .card img{
@@ -116,6 +115,7 @@
   width: 100%;
   height: 30px;
   vertical-align: auto;
+  transform: rotate(360deg);
   color: black;
   background: rgba(1, 161, 161, 0.699);
   font-size: 15px;
@@ -160,3 +160,4 @@
     transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
+

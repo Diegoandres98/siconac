@@ -7,6 +7,8 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 
+  <!-- <link rel="stylesheet" href="../Vista/vistadecarga.css"> -->
+
   <script>
       document.querySelector('#Label9').innerText = "Asignar Tarjeta";
       document.querySelector('#Label8').innerText = "Asignar Tarjeta";
@@ -75,17 +77,7 @@
                               </div>
                           </div>
                           <div class="card-footer">
-                              &nbsp; &nbsp; &nbsp; &nbsp;
-                              &nbsp; &nbsp; &nbsp; &nbsp;
-                              &nbsp; &nbsp; &nbsp; &nbsp;
-                              &nbsp; &nbsp; &nbsp; &nbsp;
-                              &nbsp; &nbsp; &nbsp; &nbsp;
-                              &nbsp; &nbsp; &nbsp; &nbsp;
-                              &nbsp; &nbsp; &nbsp; &nbsp;
-                              &nbsp; &nbsp; &nbsp; &nbsp;
-                              &nbsp; &nbsp; &nbsp;
-                              <button type="submit" class="btn btn-primary">Registrar</button>
-
+                              <button type="submit" class="btn btn-primary float-right">Registrar</button>
                           </div>
                       </form>
                   </div>
