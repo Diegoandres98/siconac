@@ -72,17 +72,16 @@ require_once "../Modelo/PortalesAsociadosAMonitores.php";
     var Identificador = $(this).attr('id');
 
     var PortalesDeLosMonitoresENJS = <?php echo json_encode($PortalesDeLosMonitores); ?>;
-
+    var connt=0;
     for (let item in PortalesDeLosMonitoresENJS) {
       // console.log(MonitoresDePortalEnJs[item]['mp_id_portal']);
       if (PortalesDeLosMonitoresENJS[item]['users_id'] == Identificador) {
-
-        var fila = '<tr id="row' + item + '" class="claseid" ><td>' + PortalesDeLosMonitoresENJS[item]['devices_id'] + '</td><td>' + PortalesDeLosMonitoresENJS[item]['devices_alias'] + '</td><td>' + PortalesDeLosMonitoresENJS[item]['devices_serie'] + ' </td> </tr>'; //esto seria lo que contendria la fila
+        var fila = '<tr id="row' + connt + '" class="claseid" ><td>' + PortalesDeLosMonitoresENJS[item]['devices_id'] + '</td><td>' + PortalesDeLosMonitoresENJS[item]['devices_alias'] + '</td><td>' + PortalesDeLosMonitoresENJS[item]['devices_serie'] + ' </td> </tr>'; //esto seria lo que contendria la fila
         // <td style="display:none;" >' + MonitoresDePortalEnJs[item]['mp_id_mp'] + '</td>
         $('#ListPortalMonitor tr:first').after(fila);
+        connt++;
       }
     }
-
   });
 </script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

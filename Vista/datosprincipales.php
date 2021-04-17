@@ -141,7 +141,9 @@ require_once "../Modelo/DatosPrincipales.php"
                       $hoy = date("Y-m-d");
                       $date = new DateTime($hoy);
                       // En la siguiente linea defines la manera como quieres que se muestr tu fecha, puedes agregar o quitar los campos que desees,segun tus necesidades. Por ejemplo:
-                      echo $date->format('l jS \of F Y '); ?></strong>
+                      // echo $date->format('l jS \of F Y '); 
+                      echo $date->format('Y-m-d');
+                      ?></strong>
             </p>
 
             <div class="chart">
