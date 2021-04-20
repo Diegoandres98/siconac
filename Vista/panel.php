@@ -1,29 +1,29 @@
 <?php
-require_once("../Modelo/ValidadorDeSession.php");
+require_once "../Modelo/ValidadorDeSession.php";
 ?>
 
-  <!DOCTYPE html>
-  <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link  rel="icon"   href="../img/Siconac.ico" type="image/ico" />
-    <title>Siconac | Dashboard </title>
+<!DOCTYPE html>
+<html lang="es">
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../img/Siconac.ico" type="image/ico" />
+  <title>Siconac | Dashboard </title>
 
-    <link rel="stylesheet" href="./vistadecarga.css">
-  </head>
-  <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed"
-   onload="ubicacion('datosprincipales');"
-  >
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+
+  <link rel="stylesheet" href="./vistadecarga.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" onload="ubicacion('datosprincipales');">
   <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -64,7 +64,7 @@ require_once("../Modelo/ValidadorDeSession.php");
 
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="fas fa-user-cog"></i> 
+            <i class="fas fa-user-cog"></i>
             <!-- <span class="badge badge-warning navbar-badge">15</span> -->
           </a>
           <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
@@ -72,7 +72,7 @@ require_once("../Modelo/ValidadorDeSession.php");
             </span>
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item" onclick="ubicacion('ActualizarData');">
-              <i class="fas fa-user-edit"></i>  Editar Perfil
+              <i class="fas fa-user-edit"></i> Editar Perfil
             </a>
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item" onclick="ubicacion('ActualizarInfoInstitucional');">
@@ -80,7 +80,7 @@ require_once("../Modelo/ValidadorDeSession.php");
             </a>
             <div class="dropdown-divider"></div>
             <a href="../Modelo/CerrarSession.php" class="dropdown-item">
-              <i class="fas fa-sign-out-alt"></i>  Cerrar Session
+              <i class="fas fa-sign-out-alt"></i> Cerrar Session
             </a>
 
           </div>
@@ -167,33 +167,25 @@ require_once("../Modelo/ValidadorDeSession.php");
                 </li> -->
               </ul>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" >
+            <!-- <li class="nav-item">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
                   Estadisticas
                 </p>
               </a>
 
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-door-open"></i>
-                <p> 
-                 Portales
+                <p>
+                  Portales
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                   <a href="#" class="nav-link" onclick="ubicacion('listadeportales');">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                    Mis Portales
-                   <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                   </a>
-                 </li>
+
 
                 <li class="nav-item">
                   <a href="#" class="nav-link" onclick="ubicacion('crearportal');">
@@ -201,6 +193,17 @@ require_once("../Modelo/ValidadorDeSession.php");
                     <p>Crear Portal</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link" onclick="ubicacion('listadeportales');">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                      Mis Portales
+                      <!-- <span class="right badge badge-danger">New</span> -->
+                    </p>
+                  </a>
+                </li>
+
+
 
               </ul>
             </li>
@@ -281,21 +284,21 @@ require_once("../Modelo/ValidadorDeSession.php");
             <li class="nav-item">
               <a href="#" onclick="ubicacion('enviaralerta');" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
-                <p class="text">Importante</p>
+                <p class="text">Enviar</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#" onclick="ubicacion('enviaralerta2');" class="nav-link">
+            <!-- <li class="nav-item">
+              <a href="#" onclick="ubicacion('enviaralerta3');" class="nav-link">
                 <i class="nav-icon far fa-circle text-warning"></i>
                 <p>Tener En Cuenta</p>
               </a>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
               <a href="#" onclick="ubicacion('enviaralerta3');" class="nav-link">
                 <i class="nav-icon far fa-circle text-info"></i>
                 <p>Informacion</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -339,8 +342,16 @@ require_once("../Modelo/ValidadorDeSession.php");
     <!-- /.control-sidebar -->
 
     <!-- Main Footer -->
-    <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2020 <a href="Siconac.ga">Sistema Control Acceso</a>.</strong>
+    <footer class="main-footer d-none d-md-block">
+      <strong>Copyright &copy; 2020-2021 <a href="Siconac.ga">Sistema Control Acceso</a>.</strong>
+      Todos Los Derechos Reservados.
+      <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 1.0 Stable
+      </div>
+    </footer>
+
+    <footer class="d-block d-sm-block d-md-none">
+      <strong>Copyright &copy; 2020-2021 <a href="Siconac.ga">Sistema Control Acceso</a>.</strong>
       Todos Los Derechos Reservados.
       <div class="float-right d-none d-sm-inline-block">
         <b>Version</b> 1.0 Stable
@@ -349,7 +360,7 @@ require_once("../Modelo/ValidadorDeSession.php");
   </div>
   <!-- ./wrapper -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="../Controlador/CargadorPagina.js"></script>
+  <script src="../Controlador/CargadorPagina.js"></script>
 
   <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
@@ -374,6 +385,34 @@ require_once("../Modelo/ValidadorDeSession.php");
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="../dist/js/pages/dashboard2.js"></script>
-  </body>
-  </html>
+  <!-- <script src="../dist/js/pages/dashboard2.js"></script> -->
+
+
+  <!-- scrips para depurar por si alguio -->
+
+  <!-- este lo saque de la vista de listademonitores2.php -->
+
+  <!-- <script src="../plugins/jquery/jquery.min.js"></script>
+
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<script src="../dist/js/adminlte.min.js"></script>
+
+<script src="../dist/js/demo.js"></script> -->
+
+</body>
+
+</html>

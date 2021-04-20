@@ -50,10 +50,10 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
                                     <td>' . $asignado . '</td>
                                     <td>' . $status . '</td>
                                     <td>
-                                        <a href="#" id="' .$i. '" class="btn btn-sm btn-primary BtnActiModal" data-toggle="modal" data-target="#modal-default3">
+                                        <a href="#" id="' .$i. '" class="btn btn-sm btn-primary BtnActiModal" data-toggle="modal" data-target="#modal-default34">
                                         <i class="fas fa-edit"></i> 
                                         </a>
-                                        <a href="#" id="' .$i. '" class="btn btn-sm bg-danger borrarportal">
+                                        <a href="#" id="' . $ListadoDeClientes[$i]['client_id'] . '" class="btn btn-sm bg-danger borrarportal">
                                         <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
@@ -86,7 +86,7 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
 <!-- /.content -->
 
 
-<div class="modal fade" id="modal-default3">
+<div class="modal fade" id="modal-default34">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -138,7 +138,7 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 <!-- DataTables  & Plugins -->
 <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -152,10 +152,10 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
 <script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
+
+<!-- <script src="../dist/js/adminlte.min.js"></script> -->
+
+<!-- <script src="../dist/js/demo.js"></script> -->
 
 <script src="../Funciones/EditarDatosDelCliente.js"></script>
 

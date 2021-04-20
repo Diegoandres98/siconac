@@ -22,7 +22,7 @@
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
       <img src="../img/Siconac.png" width="50%" height="50%"/><br>
-      <a href="../../index.html" class="h1"><b>Siconac </b>SCA</a>
+      <a href="../" class="h1"><b>Siconac </b>SCA</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Pon tus Datos Para Iniciar session</p>

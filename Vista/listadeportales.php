@@ -53,7 +53,7 @@
           ?>
         </div>
       </div>
-      <div class="card-footer">
+      <!-- <div class="card-footer">
         <nav aria-label="Contacts Page Navigation">
           <ul class="pagination justify-content-center m-0">
             <li class="page-item active"><a class="page-link" href="#">1</a></li>
@@ -62,7 +62,7 @@
 
           </ul>
         </nav>
-      </div>
+      </div> -->
       <!-- /.card-footer -->
       </div>
       <!-- /.card -->
@@ -81,7 +81,9 @@
             </button>
           </div>
           <div class="modal-body">
-            <?php require_once "../Vista/listamonitoresdeportal.php"; ?>
+            <?php 
+            require_once "../Vista/listamonitoresdeportal.php"; 
+            ?>
           </div>
           <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -110,7 +112,9 @@
           </div>
           <div class="modal-body">
 
-            <?php require_once "../Vista/listademonitores2.php"; ?>
+            <?php 
+            require_once "../Vista/listademonitores2.php"; 
+            ?>
 
           </div>
           <div class="modal-footer justify-content-between">

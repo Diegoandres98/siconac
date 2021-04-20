@@ -21,8 +21,8 @@
                   timer: 2500
                 })
 
-                $("#modal-default3").modal("hide");
-                // alert("asi es bb");
+                // $("#modal-default34").modal("hide");
+                // // alert("asi es bb");
                 $('.modal-backdrop').remove();
                 ubicacion('listadodeclientes');
           }
@@ -48,8 +48,8 @@
         var Identificador = $(this).attr('id');
 
         Swal.fire({
-            title: 'Seguro Quieres Borrar Este Portal?',
-            text: "No podas revertir la accion",
+            title: 'Seguro Quieres Borrar Este Usuario?',
+            text: "No podas revertir la accion, Perderas todo el registro de trafico que este usuario hizo, Se recomienda que mejor lo suspenda",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',
@@ -59,11 +59,11 @@
             if (result.isConfirmed) {
 
                 var parametros = {
-                    "IdPortal": IdPortal
+                    "Identificador": Identificador
                 };
                 $.ajax({
                     data: parametros, //datos que se envian a traves de ajax
-                    url: '../Modelo/EliminarPortal.php', //archivo que recibe la peticion
+                    url: '../Modelo/EliminarCliente.php', //archivo que recibe la peticion
                     type: 'post', //método de envio
                     success: function(response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
                         // $("#resultado").html(response);
@@ -73,11 +73,11 @@
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Monitor Retirado Del Portal Con Exito',
+                                title: 'Usuario Retirado Del Sistema Con Exito',
                                 showConfirmButton: false,
                                 timer: 2500
                             })
-                            ubicacion('listadeportales');
+                            ubicacion('listadodeclientes');
                             // window.location="../Vista/panel.php";
                             // location.href ="../Vista/panel.php";
                             // setTimeout(window.location="../Vista/panel.php",3000);
@@ -85,7 +85,7 @@
                         if (jsonData.success == "2") {
                             Swal.fire({
                                 icon: 'error',
-                                title: 'Parece Que este monitor ya estaba retirado',
+                                title: 'Parece Que este Usuario ya estaba retirado',
                                 text: 'Prueba Refrescando Esta Pagina',
                                 // footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
                             })

@@ -30,8 +30,8 @@
                             </thead>
                             <tbody>
                                 <?php
-                                $i = $countT-1;
-                                while ($i > 0) :
+                                $i = 0;
+                                while ($i <$countT) :
                                     echo '
                                 <tr>
                                     <td>'.$Trafico[$i]['client_identificacion'].'</td>
@@ -40,7 +40,7 @@
                                     <td>'.$Trafico[$i]['devices_alias'].'</td>
                                 </tr>
                                 ';
-                                    $i--;
+                                    $i++;
                                 endwhile;
                                 ?>
                             </tbody>
@@ -82,9 +82,9 @@
 <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../dist/js/adminlte.min.js"></script>
+<!-- <script src="../dist/js/adminlte.min.js"></script> -->
 <!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
+<!-- <script src="../dist/js/demo.js"></script>s -->
 
 <script>
     $(function() {

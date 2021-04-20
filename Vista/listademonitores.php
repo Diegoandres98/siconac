@@ -7,12 +7,12 @@ require_once "../Modelo/ListaDeMonitores.php";
 </script>
 <!-- Main content -->
 <link rel="stylesheet" href="../Vista/estilomonitor.css">
-<section class="content">
+<div class="container-fluid">
 
   <!-- Default box -->
   <div class="card card-solid">
     <div class="card-body pb-0">
-      <div class="row d-flex align-items-stretch">
+      <div class="row">
 
         <?php
         $i = 0;
@@ -20,24 +20,31 @@ require_once "../Modelo/ListaDeMonitores.php";
           echo '
           <div class="col-12 col-sm-6 col-md-3 d-flex align-items-stretch">
           <div class="card bg-light">
-          <div class="boxCard">
-
-          <button id="' . $i . '" class="borrar borrarMonitor"><i class="fas fa-trash"></i> </button>
-          
-          <div class="imageBx">
-            <img src="' . $Monitores[$i]['users_foto'] . '" alt="" srcset="">
+            <div class="boxCard">
+              <button id="' . $i . '" class="borrar borrarMonitor">
+                <i class="fas fa-trash"></i>
+              </button>
+        
+              <div class="imageBx">
+                <img src="' . $Monitores[$i]['users_foto'] . '" alt="" srcset="" />
+              </div>
+              <div class="data">
+                <label for="" id="nombre">' . $Monitores[$i]['users_nombre'] . '</label>
+                <button
+                  id="' . $Monitores[$i]['users_id'] . '"
+                  class="more verPortalesAsociados"
+                  data-toggle="modal"
+                  data-target="#modal-listPort"
+                >
+                  ver mas
+                </button>
+                <label id="guion"> </label>
+                <label for="" id="email"> ' . $Monitores[$i]['users_email'] . '</label>
+                <label for="" id="portal"> 5 Portales Asignados</label>
+              </div>
+            </div>
           </div>
-          <div class="data">
-            <label for="" id="nombre">' . $Monitores[$i]['users_nombre'] . '</label>
-            <button id="' . $Monitores[$i]['users_id'] . '" class="more verPortalesAsociados" data-toggle="modal" data-target="#modal-listPort"> ver mas </button>
-            <label id="guion"> </label>
-            <label for="" id="email"> ' . $Monitores[$i]['users_email'] . '</label>
-            <label for="" id="portal"> 5 Portales Asignados</label>
-          </div>
         </div>
-        </div>
-        </div>
-
             ';
           $i++;
         endwhile;
@@ -73,7 +80,7 @@ require_once "../Modelo/ListaDeMonitores.php";
 
 
     <!-- /.card-body -->
-    <div class="card-footer">
+    <!-- <div class="card-footer">
       <nav aria-label="Contacts Page Navigation">
         <ul class="pagination justify-content-center m-0">
           <li class="page-item active"><a class="page-link" href="#">1</a></li>
@@ -86,10 +93,8 @@ require_once "../Modelo/ListaDeMonitores.php";
           <li class="page-item"><a class="page-link" href="#">8</a></li>
         </ul>
       </nav>
-    </div>
+    </div> -->
     <!-- /.card-footer -->
   </div>
-  <!-- /.card -->
-
-</section>
+</div>
 <?php require_once "../Funciones/EliminarMonitorFSJS.php"; ?>

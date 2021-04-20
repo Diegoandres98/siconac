@@ -6,9 +6,8 @@ function ubicacion(donde) {
 
     beforeSend: function () {
       // setting a timeout
-      $("#contenido").html(
-        '<div class="loader-container"><img class="foto" src="../img/Siconac.ico"><div class="loader"></div><div class="loader2"></div></div>'
-      );
+       $("#contenido").html('<div class="row"><div class="col-md-12"><div class="contenedorCargador"><div class="loader-container"><img class="fotico" src="../img/Siconac.ico" /><div class="loader"></div><div class="loader2"></div></div></div></div></div>');
+    //  $("#contenido").html('<div class="row"><div class="col-md-12"><div class="preloader"></div></div></div>');
       // $("#contenido").addClass('loading');
       // i++;
     },
@@ -20,4 +19,3 @@ function ubicacion(donde) {
     },
   });
 }
-

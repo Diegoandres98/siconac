@@ -6,7 +6,7 @@ require_once "../Modelo/ListaDeMonitores.php";
 <script>
   document.querySelector('#Label9').innerText = "Enviar Mensaje";
   document.querySelector('#Label8').innerText = "Enviar Mensaje";
-  $("#seleccion").val('1');
+  $("#seleccion").val('3');
 </script>
 
 <!-- Google Font: Source Sans Pro -->
@@ -155,17 +155,17 @@ require_once "../Modelo/ListaDeMonitores.php";
 <!-- </div> -->
 <!-- /.content-wrapper -->
 
-<!-- jQuery -->
-<script src="../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
+
+<!-- <script src="../plugins/jquery/jquery.min.js"></script>
+
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
+
 <script src="../dist/js/adminlte.min.js"></script>
-<!-- Summernote -->
+
+
+<script src="../dist/js/demo.js"></script> -->
+
 <script src="../plugins/summernote/summernote-bs4.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
-<!-- Page specific script -->
 
 <!-- Select2 -->
 <script src="../plugins/select2/js/select2.full.min.js"></script>
@@ -193,6 +193,7 @@ require_once "../Modelo/ListaDeMonitores.php";
   });
 </script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -204,7 +205,7 @@ require_once "../Modelo/ListaDeMonitores.php";
 <script src="../plugins/pdfmake/vfs_fonts.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script> -->
 <script>
   $(function() {
     $("#tabladedestinatarios").DataTable({
@@ -215,6 +216,4 @@ require_once "../Modelo/ListaDeMonitores.php";
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
   });
 </script>
-</body>
 
-</html>

@@ -18,8 +18,11 @@ require_once "../Modelo/DatosPrincipales.php"
             <div class="info-box-content">
               <span class="info-box-text">Trafico Hoy</span>
               <span class="info-box-number">
-                10
-                <small>%</small>
+                 <?php
+                  // echo ($countTH/$countAC)*100 
+                  ?>
+                 <?php echo $countTH ?>
+                <small>Ingresos</small>
               </span>
             </div>
             <!-- /.info-box-content -->
@@ -141,8 +144,8 @@ require_once "../Modelo/DatosPrincipales.php"
                       $hoy = date("Y-m-d");
                       $date = new DateTime($hoy);
                       // En la siguiente linea defines la manera como quieres que se muestr tu fecha, puedes agregar o quitar los campos que desees,segun tus necesidades. Por ejemplo:
-                      // echo $date->format('l jS \of F Y '); 
-                      echo $date->format('Y-m-d');
+                       echo $date->format('l jS \of F Y ');
+                      //   // echo $date->format('Y-m-d');
                       ?></strong>
             </p>
 
@@ -200,4 +203,4 @@ require_once "../Modelo/DatosPrincipales.php"
   }
 </style>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../dist/js/pages/dashboard2.js"></script>
+<script src="../Funciones/CargarTablaEstadistica.js"></script>
