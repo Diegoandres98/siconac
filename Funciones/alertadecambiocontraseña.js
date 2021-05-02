@@ -20,6 +20,7 @@ $(document).ready(function () {
                     // window.location="../Vista/panel.php";
                     // location.href ="../Vista/panel.php";
                   // setTimeout(window.location="../Vista/panel.php",3000);
+                  ubicacion('ActualizarData');
               }
               if(jsonData.success == "2")
               {

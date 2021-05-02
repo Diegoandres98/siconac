@@ -31,7 +31,7 @@ $('#formularioenviodata2').submit(function (e)
     data:datos,
     success: function(response)
     {
-     console.log(response);
+    //  console.log(response);
 
      var jsonData = JSON.parse(response);
           if(jsonData.success == "1"){

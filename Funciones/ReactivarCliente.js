@@ -35,7 +35,7 @@ $("#formularioenviodata4").submit(function (e) {
     url: "../Modelo/ReactivarCliente.php",
     data: datos,
     success: function (response) {
-      console.log(response);
+      // console.log(response);
 
       var jsonData = JSON.parse(response);
       if (jsonData.success == "1") {

@@ -1,5 +1,6 @@
 <?php
 require_once "../Modelo/ValidadorDeSession.php";
+require_once "../Modelo/SoloAdministradorROL.php";
 ?>
 
 <!DOCTYPE html>

@@ -15,7 +15,7 @@ $(document).ready(function () {
                   Swal.fire({
                       position: 'top-end',
                       icon: 'success',
-                      title: 'Your work has been saved',
+                      title: 'Administrador Logueado Con Exito',
                       showConfirmButton: false,
                       timer: 1500
                     })
@@ -46,7 +46,20 @@ $(document).ready(function () {
                 // location.href ="../Vista/panel.php";
               }
                 //imprimo el resultado en el div mensaje que procesa ajax
-                $("#mensaje").html(data);
+                if(jsonData.success == "4"){
+                  Swal.fire({
+                      position: 'top-end',
+                      icon: 'success',
+                      title: 'Monitor Logueado Con Exito',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
+
+                      window.location.href = "../Vista/M/panel.php";
+                    // window.location="../Vista/panel.php";
+                    // location.href =
+                  // setTimeout(window.location="../Vista/panel.php",3000);
+              }
             }
         });
     });

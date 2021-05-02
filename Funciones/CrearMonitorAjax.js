@@ -4,7 +4,7 @@ $(document).ready(function () {
         //captura todos los valores que tiene el formulario es decir todos los input que esten en ese formulario...
         // var datos=$(this).serialize();
         var datos=new FormData($('#FormRegistroMonitor')[0]);
-        console.log(datos);
+        // console.log(datos);
         $.ajax({
             type:"POST",
             processData: false,
@@ -12,7 +12,7 @@ $(document).ready(function () {
             url:"../Modelo/CrearMonitor.php",
             data:datos,
             success:function(data){
-                 console.log(data);
+                //  console.log(data);
                  var jsonData = JSON.parse(data);
                 // console.log(jsonData);
               if(jsonData.success == "1"){
@@ -23,6 +23,7 @@ $(document).ready(function () {
                       showConfirmButton: false,
                       timer: 2500
                     })
+                    ubicacion('crearmonitor');
               }
 
               if(jsonData.success == "2")

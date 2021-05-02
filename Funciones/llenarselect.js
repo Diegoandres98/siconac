@@ -2,7 +2,7 @@ var cursos = $("#miSelect");
 $(document).ready(function () {
   $.ajax({
     type: "POST",
-    url: "../Modelo/TraerClientesSinAsignar.php",
+    url: "../../Modelo/M/TraerClientesDisponibles.php",
     success: function (response) {
       var jsonData = JSON.parse(response);
       cursos.find("option").remove();
@@ -22,19 +22,32 @@ $(document).ready(function () {
   });
 });
 
-$("#formularioenviodata").submit(function (e) {
-  var seleccion = $("#miSelect").val();
-  var numTarget = $("#myInput").val();
+$(document).on("change", "#miSelect", function (event) {
+  var separa = $("#miSelect option:selected").text().split("_");
+  $("#InpCc").val(separa[0]);
+  $("#InpNom").val(separa[1]);
+  $("#Inpocultoid").val(idpublic);
+  // $("#TxtNom").text(separa[1]);
+  // $("#TxtCc").text(separa[0]);
+});
 
-  var datos = {
-    Seleccion: seleccion,
-    NumTarget: numTarget,
-  };
+
+$("#formularioenviodata").submit(function (e) {
 
   e.preventDefault();
+  var nombre = $("#InpNom").val();
+  var numiden = $("#InpCc").val();
+  var idoculto = $("#Inpocultoid").val();
+
+  var datos = {
+    InpNom: nombre,
+    InpCc: numiden,
+    Inpocultoid: idoculto
+  };
+// console.log(datos);
   $.ajax({
     type: "POST",
-    url: "../Modelo/AsignarTarget.php",
+    url: "../../Modelo/M/AccesoManual.php",
     data: datos,
     success: function (response) {
       // console.log(response);
@@ -44,19 +57,19 @@ $("#formularioenviodata").submit(function (e) {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Se Asigno Con Exito La Tarjeta",
+          title: "Se ingreso Correctamente",
           showConfirmButton: false,
           timer: 2500,
         });
 
-        ubicacion("asignartarget");
+        // ubicacion("asignartarget");
       }
 
       if (jsonData.success == "2") {
         Swal.fire({
           icon: "error",
-          title: "No Pudo asignar la tarjeta",
-          text: "Hubo Un Problema Al Registrar Intenta de Nuevo",
+          title: "No Pudo abrir",
+          text: "los datos son inexistentes",
           // footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
         });
         // location.href ="../Vista/panel.php";
@@ -65,18 +78,12 @@ $("#formularioenviodata").submit(function (e) {
       if (jsonData.success == "3") {
         Swal.fire({
           icon: "error",
-          title: "Esta tarjeta ya existe",
-          text: "no puedes registrar 2 veces las misma tarjeta",
+          title: "Este usuario no existe",
+          text: "Estas tratando de ingresar a alguien que no existe",
           // footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
         });
         // location.href ="../Vista/panel.php";
       }
     },
   });
-});
-
-$(document).on("change", "#miSelect", function (event) {
-  var separa = $("#miSelect option:selected").text().split("_");
-  $("#InpCc").val(separa[0]);
-  $("#InpNom").val(separa[1]);
 });

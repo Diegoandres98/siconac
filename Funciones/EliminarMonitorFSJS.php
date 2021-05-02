@@ -5,7 +5,7 @@ require_once "../Modelo/PortalesAsociadosAMonitores.php";
 ?>
 <script>
   $(".borrarMonitor").click(function() {
-    console.log("hola funciono pero no se que pvats");
+    // console.log("hola funciono pero no se que pvats");
     var Identificador = $(this).attr('id');
     var MonitorEnJavaScript = <?php echo json_encode($Monitores); ?>;
     var IdMonitor = MonitorEnJavaScript[Identificador]['users_id'];

@@ -19,7 +19,7 @@ $(document).ready(function () {
           ++i;
         });
         arreglodepersonas[ps]=result[0];
-        console.log(arreglodepersonas[ps]);
+        // console.log(arreglodepersonas[ps]);
         ++ps;
       });
 
@@ -42,7 +42,7 @@ $(document).ready(function () {
             data:parametros,
             success:function(data){
                 var jsonData = JSON.parse(data);
-                console.log(jsonData);
+                // console.log(jsonData);
               if(jsonData.success == "1"){
                   Swal.fire({
                       position: 'top-end',

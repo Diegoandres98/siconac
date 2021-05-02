@@ -10,7 +10,7 @@ require_once "../Modelo/ListaMonitoresPortal.php";
     // console.log($(this).attr('id'));
     var Identificador = $(this).attr('id');
 
-    console.log(Identificador);
+    // console.log(Identificador);
     var PortalEnJavaScript = <?php echo json_encode($Portales); ?>;
     var Id = PortalEnJavaScript[Identificador]['devices_id'];
     IdPortalEscogido = Id;
@@ -30,8 +30,8 @@ require_once "../Modelo/ListaMonitoresPortal.php";
 
     var IdMonitor = MonitorEnJavaScript[Identificador]['users_id'];
 
-    console.log(IdMonitor);
-    console.log(IdPortalEscogido);
+    // console.log(IdMonitor);
+    // console.log(IdPortalEscogido);
     // $("#IdMonitor").val(IdMonitor);
     // $("#IdPortal").val(IdPortal);
 
@@ -45,9 +45,9 @@ require_once "../Modelo/ListaMonitoresPortal.php";
       type: 'post', //método de envio
       success: function(response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
         // $("#resultado").html(response);
-        console.log(response);
+        // console.log(response);
         var jsonData = JSON.parse(response);
-        console.log(jsonData);
+        // console.log(jsonData);
         if (jsonData.success == "1") {
 
           Swal.fire({
@@ -146,9 +146,9 @@ require_once "../Modelo/ListaMonitoresPortal.php";
       type: 'post', //método de envio
       success: function(response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
         // $("#resultado").html(response);
-        console.log(response);
+        // console.log(response);
         var jsonData = JSON.parse(response);
-        console.log(jsonData);
+        // console.log(jsonData);
 
 
         if (jsonData.success == "1") {
@@ -201,7 +201,7 @@ require_once "../Modelo/ListaMonitoresPortal.php";
     var PortalEnJavaScript = <?php echo json_encode($Portales); ?>;
     var IdPortal = PortalEnJavaScript[Identificador]['devices_id'];
     // var cualeliminar=$(this).attr('id');
-    console.log(IdPortal);
+    // console.log(IdPortal);
     Swal.fire({
       title: 'Seguro Quieres Borrar Este Portal?',
       text: "No podas revertir la accion",

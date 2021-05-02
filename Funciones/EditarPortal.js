@@ -8,9 +8,9 @@ $(document).ready(function () {
             url:"../Modelo/EditarPortal.php",
             data:datos,
             success:function(data){
-                console.log("diego estrada");
+                // console.log("diego estrada");
                 var jsonData = JSON.parse(data);
-                console.log(jsonData);
+                // console.log(jsonData);
               if(jsonData.success == "1"){
 
                   Swal.fire({
