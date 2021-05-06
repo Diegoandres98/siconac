@@ -9,7 +9,7 @@ date_default_timezone_set("America/Bogota");
 
 $fecha1=date('Y-m-d');
 
-$hora="12:00:00";
+$hora="00:00:00";
 $PorHoras = array();
 
 for ($i=1; $i <25 ; $i++) { 
@@ -27,6 +27,8 @@ for ($i=1; $i <25 ; $i++) {
 
      $hora=$hora2;
 }
+
+
 echo json_encode ($PorHoras);
 // echo $fechadeayerseteada. "<-- fecha de ayer ---- fecha de hoy -->".$fechadehoy ;
 

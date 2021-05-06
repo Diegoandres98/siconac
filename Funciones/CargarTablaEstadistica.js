@@ -7,8 +7,7 @@ $(document).ready(function () {
       type: "GET",
       url: "../Modelo/DatosEstadistica.php",
       success: function (response) {
-        
-        dataDeBD=response;
+        dataDeBD=JSON.parse(response);
       },
     });
   });
@@ -27,7 +26,7 @@ $(function () {
     //-----------------------
     // - MONTHLY SALES CHART -
     //-----------------------
-  
+    console.log(dataDeBD);
     // Get context with jQuery - using jQuery's .get() method.
     var salesChartCanvas = $('#salesChart').get(0).getContext('2d')
     // console.log(dataDeBD);  
@@ -44,9 +43,9 @@ $(function () {
           pointStrokeColor: 'rgba(60,141,188,1)',
           pointHighlightFill: '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-        //    data: [50, 100, 0, 19, 86, 60, 90, 48, 40, 19, 1, 0, 0, 3, 40, 19, 86, 27, 90, 48, 40, 19, 86, 27]
+          //  data: [50, 100, 0, 19, 86, 60, 90, 48, 40, 19, 1, 0, 0, 3, 40, 19, 86, 27, 90, 48, 40, 19, 86, 27]
            data: dataDeBD
-        },
+        }
         // {
         //   label: 'Electronics',
         //   backgroundColor: 'rgba(210, 214, 222, 1)',

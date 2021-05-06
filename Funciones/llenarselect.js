@@ -61,7 +61,7 @@ $("#formularioenviodata").submit(function (e) {
           showConfirmButton: false,
           timer: 2500,
         });
-
+        $("#formularioenviodata")[0].reset();
         // ubicacion("asignartarget");
       }
 

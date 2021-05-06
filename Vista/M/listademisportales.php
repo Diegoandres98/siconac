@@ -92,7 +92,7 @@ require_once "../../Modelo/M/ListaDeMisPortales.php";
         // console.log($(this).attr('id'));
         var Identificador = $(this).attr('id');
         x= $('#portal'+Identificador).text();
-        // Cargartrafico(Identificador);
+        Cargartrafico(Identificador);
       });
 
       $(".accesomanual").click(function() {
