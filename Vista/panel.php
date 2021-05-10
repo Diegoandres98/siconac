@@ -2,7 +2,9 @@
 require_once "../Modelo/ValidadorDeSession.php";
 require_once "../Modelo/SoloAdministradorROL.php";
 ?>
-
+<?php
+require_once "../Modelo/DatosPrincipales.php"
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -134,7 +136,7 @@ require_once "../Modelo/SoloAdministradorROL.php";
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   General
-                  <span class="right badge badge-danger">New</span>
+                  <span class="right badge badge-primary">New</span>
                 </p>
               </a>
             </li>
@@ -144,7 +146,6 @@ require_once "../Modelo/SoloAdministradorROL.php";
                 <p>
                   Registrar
                   <i class="fas fa-angle-left right"></i>
-                  <span class="badge badge-info right">6</span>
                 </p>
               </a>
               <ul class="nav nav-treeview">
@@ -183,6 +184,7 @@ require_once "../Modelo/SoloAdministradorROL.php";
                 <p>
                   Portales
                   <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-danger right"><?php echo $countD ?></span>
                 </p>
               </a>
               <ul class="nav nav-treeview">
@@ -214,6 +216,7 @@ require_once "../Modelo/SoloAdministradorROL.php";
                 <p>
                   Tarjetas
                   <i class="fas fa-angle-left right"></i>
+                   <span class="badge badge-info right"><?php echo $countAC ?></span>
                 </p>
               </a>
               <ul class="nav nav-treeview">
@@ -250,7 +253,7 @@ require_once "../Modelo/SoloAdministradorROL.php";
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Mis Monitores
-                  <span class="right badge badge-danger">New</span>
+                  <span class="right badge badge-success"><?php echo $countM ?></span>
                 </p>
               </a>
             </li>

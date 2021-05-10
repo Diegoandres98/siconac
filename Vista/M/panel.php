@@ -1,6 +1,7 @@
 <?php
 require_once "../../Modelo/ValidadorDeSession.php";
 require_once "../../Modelo/M/ListaDeMisPortales.php";
+require_once "../../Modelo/M/CuantosMsj.php";
 ?>
 
 <!DOCTYPE html>
@@ -138,11 +139,11 @@ require_once "../../Modelo/M/ListaDeMisPortales.php";
             <li class="nav-header">Informacion</li>
 
             <li class="nav-item">
-              <a href="#" onclick="ubicacion('datosprincipales');" class="nav-link">
+              <a href="#" onclick="cargarchats();" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Mensajes
-                  <span class="right badge badge-danger">New</span>
+                  <span class="right badge badge-primary"><?php echo $countMsj; ?></span>
                 </p>
               </a>
             </li>
@@ -205,6 +206,9 @@ require_once "../../Modelo/M/ListaDeMisPortales.php";
       </div>
     </footer>
   </div>
+
+
+  <script src="../../Funciones/MensajesMonitor.js"></script>
   <!-- ./wrapper -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="../../Controlador/CargadorPaginaMonitor.js"></script>

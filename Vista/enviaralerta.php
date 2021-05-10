@@ -6,7 +6,7 @@ require_once "../Modelo/ListaDeMonitores.php";
 <script>
   document.querySelector('#Label9').innerText = "Enviar Mensaje";
   document.querySelector('#Label8').innerText = "Enviar Mensaje";
-  $("#seleccion").val('3');
+  $("#seleccion").val('2');
 </script>
 
 <!-- Google Font: Source Sans Pro -->
@@ -55,8 +55,7 @@ require_once "../Modelo/ListaDeMonitores.php";
             <div class="form-group">
               <select id="seleccion" class="select2" style="width: 100%;">
                 <option value="1">Importante</option>
-                <option value="2">Tener En Cuenta</option>
-                <option value="3">Informacion</option>
+                <option value="2">Informativo</option>
               </select>
             </div>
           </div>
