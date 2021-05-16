@@ -27,8 +27,10 @@ $result = $conn->query("SELECT * FROM `Datos_Institucionales` WHERE `Datos_id_ad
 $DatosInfo = $result->fetch_all(MYSQLI_ASSOC);
 
 date_default_timezone_set("America/Bogota");
-$fechadeayer=date('Y-m-d', strtotime('-1 day'));
-$hora="12:00:01";
+// $fechadeayer=date('Y-m-d', strtotime('-1 day'));
+$fechadeayer=date('Y-m-d');
+
+$hora="00:00:01";
 
 $fechadeayerseteada= $fechadeayer." ".$hora;
 $fechadehoy=date('Y-m-d H:i:s');

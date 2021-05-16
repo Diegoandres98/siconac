@@ -27,7 +27,8 @@ if(!empty($_POST['txtnombre']) && !empty($_POST['txtpasswordA'])
 
       //Insertar los Nuevos Datos xD
       $result = $conn->query("UPDATE `users` SET  `users_password` = '".$nuevapass."',`users_nombre` = '".$nombreActual."',`users_email` = '".$nuevocorreo."' WHERE `users_id` = '".$id."' AND  `users_password` = '".$password."' ");
-
+      $_SESSION['users_email'] = $nuevocorreo;
+      $_SESSION['users_nombre'] = $nombreActual;
       //echo "<pre>";
       //print_r($devices);
       //die();

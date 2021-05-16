@@ -113,7 +113,7 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Numero Identficacion</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="numS" name="numS"  value="" required>
+                                    <input type="number" class="form-control" id="numS" name="numS"  value="" required>
                                     <input type="hidden" id="Id" value="" name="Id">
                                 </div>
                             </div>

@@ -10,8 +10,8 @@ require_once "../Modelo/ListaDeMonitores.php";
 <div class="container-fluid">
 
   <!-- Default box -->
-  <div class="card card-solid">
-    <div class="card-body pb-0">
+  <!-- <div class="card card-solid"> -->
+    <!-- <div class="card-body pb-0"> -->
       <div class="row">
 
         <?php
@@ -36,11 +36,11 @@ require_once "../Modelo/ListaDeMonitores.php";
                   data-toggle="modal"
                   data-target="#modal-listPort"
                 >
-                  ver mas
+                  ver portales <i class="fas fa-door-open"></i>
                 </button>
                 <label id="guion"> </label>
                 <label for="" id="email"> ' . $Monitores[$i]['users_email'] . '</label>
-                <label for="" id="portal"> 5 Portales Asignados</label>
+               
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@ require_once "../Modelo/ListaDeMonitores.php";
         endwhile;
         ?>
       </div>
-    </div>
+    <!-- </div> -->
 
     <div class="modal fade" id="modal-listPort">
       <div class="modal-dialog">

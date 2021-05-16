@@ -1,6 +1,7 @@
 <?php
 require_once "../../Modelo/ValidadorDeSession.php";
 require_once "../../Modelo/M/ListaDeMisPortales.php";
+require_once "../../Modelo/M/IdDeLosPortalesDelMonitor.php";
 ?>
 
 <script>
@@ -21,11 +22,11 @@ require_once "../../Modelo/M/ListaDeMisPortales.php";
                     <span class="info-box-icon bg-info elevation-1"><i class="fas fa-door-open"></i></span>
     
                     <div class="info-box-content">
-                      <span id="portal'.$Portales[$i]['devices_id'] .'" class="info-box-text">Portal: ' . $Portales[$i]['devices_alias'] . '</span>
+                      <span id="portal' . $Portales[$i]['devices_id'] . '" class="info-box-text">Portal: ' . $Portales[$i]['devices_alias'] . '</span>
                       <span class="info-box-number">Trafico En Vivo: </span>
 
                       <div class="text-right">
-                      <a href="#" id="' .$Portales[$i]['devices_id'] . '" class="btn btn-sm bg-warning vertraficoportal">
+                      <a href="#" id="' . $Portales[$i]['devices_id'] . '" class="btn btn-sm bg-warning vertraficoportal">
                       <i class="fas fa-info-circle"></i> Trafico
                       </a>
 
@@ -63,10 +64,10 @@ require_once "../../Modelo/M/ListaDeMisPortales.php";
       <div class="modal-body">
         <div class="card card-info">
           <div class="card-header">
-          <h3 id="cardtitle" class="card-title">En el Portal</h3>
+            <h3 id="cardtitle" class="card-title">En el Portal</h3>
           </div>
 
-            <?php require_once "../M/accesomanual.php"; ?>
+          <?php require_once "../M/accesomanual.php"; ?>
 
         </div>
       </div>
@@ -85,20 +86,34 @@ require_once "../../Modelo/M/ListaDeMisPortales.php";
 
 <script src="../../Controlador/CargadorTraficoDEPORTAL.js"></script>
 
-    <script>
-      var x;
-      var idpublic;
-      $(".vertraficoportal").click(function() {
-        // console.log($(this).attr('id'));
-        var Identificador = $(this).attr('id');
-        x= $('#portal'+Identificador).text();
-        Cargartrafico(Identificador);
-      });
 
-      $(".accesomanual").click(function() {
-        // console.log($(this).attr('id'));
-        var Identificador = $(this).attr('id');
-        idpublic= Identificador;
-        // Cargartrafico(Identificador);
-      });
-    </script>
+<script>
+  var x;
+  var IdPortalSeleccionado;
+  $(".vertraficoportal").click(function() {
+    // console.log($(this).attr('id'));
+    var Identificador = $(this).attr('id');
+    x = $('#portal' + Identificador).text();
+    Cargartrafico(Identificador);
+  });
+
+  $(".accesomanual").click(function() {
+    // console.log($(this).attr('id'));
+    var Identificador = $(this).attr('id');
+    IdPortalSeleccionado = Identificador;
+    // Cargartrafico(Identificador);
+    $("#InpCc").val('');
+    $("#InpNom").val('');
+    $("#Inpocultoid").val('');
+    $("#botonenviar").prop('disabled', true);
+
+  });
+</script>
+
+<script>
+  PortalesDelMonit = <?php echo json_encode($IDPortales); ?>;
+  IdAdmiDelMonit = <?php echo $_SESSION['users_propietario']; ?>;
+  IdMonit = <?php echo $_SESSION['users_id']; ?>;
+</script>
+<script src="../../Mqtt/FuncionesYConexion.js"></script>
+  <script src="../../Mqtt/MqttRegistroManual.js"></script>

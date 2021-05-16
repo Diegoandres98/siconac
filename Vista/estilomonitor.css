@@ -6,7 +6,7 @@ body {
 .boxCard {
     width: 240px;
     margin: auto;
-    height: 320px;
+    height: 270px;
     /* border: 2px solid #666 ; */
     border-radius: 3px;
     box-shadow: 10px 10px 15px #66666670, inset 0px 0px 8px #999;

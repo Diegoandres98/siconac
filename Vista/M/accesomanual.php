@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-info float-right">Dejar Ingresar</button>
+                            <button type="submit" disabled id="botonenviar" class="btn btn-info float-right">Dejar Ingresar</button>
                         </div>
                     </form>
                 </div>

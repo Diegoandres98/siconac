@@ -14,6 +14,7 @@ require_once "../../Modelo/M/CuantosMsj.php";
   <title>Siconac | Dashboard </title>
 
   <!-- Google Font: Source Sans Pro -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
@@ -73,8 +74,12 @@ require_once "../../Modelo/M/CuantosMsj.php";
             <span class="dropdown-item dropdown-header"> <?php echo $_SESSION['users_nombre']; ?>
             </span>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item" onclick="ubicacion('ActualizarData');">
-              <i class="fas fa-user-edit"></i> Editar Perfil
+            <a href="#" class="dropdown-item" onclick="ubicacion('ActualizacionDeDatos');">
+            <i class="far fa-edit"></i> Editar Datos Perfil
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item" onclick="ubicacion('cambiarfoto');">
+            <i class="far fa-user-circle"></i> Cambiar Foto Perfil
             </a>
             <div class="dropdown-divider"></div>
             <a href="../../Modelo/CerrarSession.php" class="dropdown-item">
@@ -101,7 +106,7 @@ require_once "../../Modelo/M/CuantosMsj.php";
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="../<?php echo $_SESSION['users_img']; ?>" class="img-circle elevation-2" alt="User Image">
+            <img src="<?php echo $_SESSION['users_img']; ?>" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block"><?php echo $_SESSION['users_nombre']; ?></a>
@@ -237,7 +242,8 @@ require_once "../../Modelo/M/CuantosMsj.php";
   <script src="../../dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <!-- <script src="../../dist/js/pages/dashboard2.js"></script> -->
-
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <!-- <script src="../../Mqtt/FuncionesYConexion.js"></script> -->
 
   <!-- scrips para depurar por si alguio -->
 

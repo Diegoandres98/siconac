@@ -1,0 +1,102 @@
+/* .images-cards {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  border: 1px solid #CCC;
+  border-radius: 10px;
+  background: rgba(197, 45, 45, 0.945);
+  box-shadow: 10px 0px 10px rgba(0, 0, 0, .5);
+  position: relative;
+  margin: auto;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* Body */
+
+main {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: inline-block;
+  width: 80%;
+  height: auto;
+  padding: 20px;
+}
+
+/* ->Body */
+
+/* Imágenes */
+
+.images-cards figure {
+  position: relative;
+}
+
+.images-cards img {
+  height: 240px;
+}
+
+/* .images-cards figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 44px;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+
+.images-cards figure figcaption:hover {
+  opacity: 1;
+} */
+
+/* ->Imágenes */
+
+/* Selector de imágenes */
+
+#Images .add-new-photo {
+  display: flex;
+  border: 4px dashed #fff;
+  height: 100%;
+  min-height: 240px;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+
+/* #Images .add-new-photo.first:hover {
+  background: rgba(255, 255, 255, 0.17);
+} */
+
+#add-photo-container input {
+  display: none;
+}
+
+/* ->Selector de imágenes */

@@ -228,7 +228,7 @@ require_once "../Modelo/ListaMonitoresPortal.php";
               Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: 'Monitor Retirado Del Portal Con Exito',
+                title: 'Portal Eliminado Con Exito',
                 showConfirmButton: false,
                 timer: 2500
               })
@@ -240,7 +240,7 @@ require_once "../Modelo/ListaMonitoresPortal.php";
             if (jsonData.success == "2") {
               Swal.fire({
                 icon: 'error',
-                title: 'Parece Que este monitor ya estaba retirado',
+                title: 'Parece Que este Portal ya estaba borrado',
                 text: 'Prueba Refrescando Esta Pagina',
                 // footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
               })
