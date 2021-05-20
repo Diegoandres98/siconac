@@ -58,7 +58,7 @@ client.on('message', function (topic, message) {
       if(result.length==1){
         //GRANTED
         client.publish(iD_Portal + "/user_name",result[0].client_name);
-        client.publish(iD_Portal + "/command","abierto");
+        client.publish(iD_Portal + "/command","abiertoAutomatico");
         console.log("Acceso permitido a..." + result[0].client_name);
 
         var query = "INSERT INTO `traffic` (`traffic_client_id`,`traffic_devices_id`,`traffic_devices_user_id`) "

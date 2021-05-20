@@ -8,6 +8,7 @@ require_once "../../Modelo/M/IdDeLosPortalesDelMonitor.php";
   document.querySelector('#Label9').innerText = "Lista De Portales A Cargo";
   document.querySelector('#Label8').innerText = "Lista De Portales A Cargo";
 </script>
+<link rel="stylesheet" href="parpadeo.css">
 <!-- Main content -->
 <section class="content">
 
@@ -19,11 +20,11 @@ require_once "../../Modelo/M/IdDeLosPortalesDelMonitor.php";
         echo '
                 <div class="col-12 col-sm-6 col-md-6">
                   <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-door-open"></i></span>
+                    <span id="bombillo'. $Portales[$i]['devices_id'] .'" class="info-box-icon bg-info elevation-1"><i class="fas fa-door-open"></i></span>
     
                     <div class="info-box-content">
                       <span id="portal' . $Portales[$i]['devices_id'] . '" class="info-box-text">Portal: ' . $Portales[$i]['devices_alias'] . '</span>
-                      <span class="info-box-number">Trafico En Vivo: </span>
+                      <span id="display_new_access'.$Portales[$i]['devices_id'].'" class="info-box-number">Trafico En Vivo: </span>
 
                       <div class="text-right">
                       <a href="#" id="' . $Portales[$i]['devices_id'] . '" class="btn btn-sm bg-warning vertraficoportal">

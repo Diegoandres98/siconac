@@ -1,13 +1,13 @@
 <?php
-require_once "../../Modelo/ValidadorDeSession.php";
-require_once "../../Modelo/Conexion.php";
+require_once "../Modelo/ValidadorDeSession.php";
+require_once "../Modelo/Conexion.php";
 // $directorio = '../archivos/'.$_SESSION['users_id'].'/';
 // $subir_archivo = $directorio.basename($_FILES['subir_archivo']['name']);
 
 if (!empty($_FILES['subir_archivo'])) {
 
 
-    $directorio = '../../archivos/' . $_SESSION['users_propietario'] . '/' . $_SESSION['users_id']. '/';
+    $directorio = '../archivos/' . $_SESSION['users_propietario'] . '/' . $_SESSION['users_id']. '/';
     $subir_archivo = $directorio . basename($_FILES['subir_archivo']['name']);
 
     if (!file_exists($directorio)) {

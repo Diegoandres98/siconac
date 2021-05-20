@@ -9,7 +9,7 @@ $(document).ready(function () {
             type:"POST",
             processData: false,
             contentType: false,
-            url:"../../Modelo/M/CambiarFoto.php",
+            url:"../../Modelo/CambiarFoto.php",
             data:datos,
             success:function(data){
                 //  console.log(data);

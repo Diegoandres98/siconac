@@ -25,14 +25,43 @@ function process_msg(topic, message){
     $("#display_temp1").html(msg);
   }
 
-  if (query == "access_query"){
-    $("#display_new_access").html("Nuevo acceso: " + msg);
-    audio.play();
+  if (query == "user_name"){
+    $("#display_new_access"+serial_number).html("Nuevo acceso: " + msg);
 
     setTimeout(function(){
-      $("#display_new_access").html("");
+      $("#display_new_access"+serial_number).html("Trafico En Vivo:");
     }, 3000);
 
+  }
+
+  if (query=="command") {
+    if (message.toString()=="abiertoManual") {
+      // var audio = new Audio('../../audio.mp3');
+      audio.play();
+      
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Acceso Correcto',
+        showConfirmButton: false,
+        timer: 2500
+      })
+    }
+    if (message.toString()=="abiertoAutomatico"){
+      audio.play();
+
+
+        $("#bombillo"+serial_number).removeClass("bg-info");
+        $("#bombillo"+serial_number).addClass("bg-success");
+        $("#bombillo"+serial_number).addClass("animacion");
+
+        setTimeout(function(){
+          $("#bombillo"+serial_number).addClass("bg-info");
+          $("#bombillo"+serial_number).removeClass("bg-success");
+          $("#bombillo"+serial_number).removeClass("animacion");
+        }, 2000);
+
+    }
   }
 
 }
@@ -68,6 +97,7 @@ client.on('connect', () => {
     PortalesDelMonit.forEach(element => {
 
       client.subscribe(element['devices_id']+"/command", { qos: 0 }, (error) => {})
+      client.subscribe(element['devices_id']+"/user_name", { qos: 0 }, (error) => {})
     });
 
    
@@ -84,25 +114,8 @@ client.on('connect', () => {
 
 client.on('message', (topic, message) => {
   console.log('Mensaje recibido bajo tópico: ', topic, ' -> ', message.toString());
-  // process_msg(topic, message);
-  if (message.toString()=="abiertoManual") {
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Acceso Correcto',
-      showConfirmButton: false,
-      timer: 2500
-    })
-  }
-  else
-  {
-    Swal.fire({
-      icon: 'error',
-      title: 'Acceso Negado',
-      text: 'No cumple con los requisitos',
-      // footer: '<a href>Si olvidaste la contraseña contacta con el administrador</a>'
-      })
-  }
+  process_msg(topic, message);
+
 })
 
 client.on('reconnect', (error) => {
