@@ -26,20 +26,36 @@
                                     <th>Nombre</th>
                                     <th>Fecha</th>
                                     <th>Portal</th>
+                                    <th>Modo De Acceso</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $i = 0;
                                 while ($i <$countT) :
-                                    echo '
-                                <tr>
-                                    <td>'.$Trafico[$i]['client_identificacion'].'</td>
-                                    <td>'.$Trafico[$i]['client_name'].'</td>
-                                    <td>'.$Trafico[$i]['traffic_date'].'</td>
-                                    <td>'.$Trafico[$i]['devices_alias'].'</td>
-                                </tr>
-                                ';
+                                    if ($Trafico[$i]['traffic_responsable']==0) {
+                                        echo '
+                                        <tr>
+                                            <td>'.$Trafico[$i]['client_identificacion'].'</td>
+                                            <td>'.$Trafico[$i]['client_name'].'</td>
+                                            <td>'.$Trafico[$i]['traffic_date'].'</td>
+                                            <td>'.$Trafico[$i]['devices_alias'].'</td>
+                                            <td> Automatico </td>
+                                        </tr>
+                                        ';
+                                    }
+                                    else {
+                                        echo '
+                                        <tr>
+                                            <td>'.$Trafico[$i]['client_identificacion'].'</td>
+                                            <td>'.$Trafico[$i]['client_name'].'</td>
+                                            <td>'.$Trafico[$i]['traffic_date'].'</td>
+                                            <td>'.$Trafico[$i]['devices_alias'].'</td>
+                                            <td> Accedido por el monitor: '.$Trafico[$i]['traffic_responsable'].'</td>
+                                        </tr>
+                                        ';
+                                    }
+
                                     $i++;
                                 endwhile;
                                 ?>
@@ -50,6 +66,7 @@
                                     <th>Nombre</th>
                                     <th>Fecha</th>
                                     <th>Portal</th>
+                                    <th>Modo De Acceso</th>
                                 </tr>
                             </tfoot>
                         </table>

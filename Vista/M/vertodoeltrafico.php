@@ -27,6 +27,7 @@ require_once "../../Modelo/M/ListaTraficoPortal.php";
                                     <th>Nombre</th>
                                     <th>Fecha</th>
                                     <th>Portal</th>
+                                    <th>Modo De Acceso</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,6 +52,7 @@ require_once "../../Modelo/M/ListaTraficoPortal.php";
                                     <th>Nombre</th>
                                     <th>Fecha</th>
                                     <th>Portal</th>
+                                    <th>Modo De Acceso</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -69,8 +71,17 @@ require_once "../../Modelo/M/ListaTraficoPortal.php";
 <script>
 
     for (let i = 0; i < datosRegistrados[0].length; i++) {
-        var fila = '<tr id="row' + i + '" class="claseid" ><td>' + datosRegistrados[0][i]['client_identificacion'] + '</td><td>' + datosRegistrados[0][i]['client_name'] + '</td><td>' + datosRegistrados[0][i]['traffic_date'] + '</td> <td>' + datosRegistrados[0][i]['devices_alias'] + '</td>  </tr>'; //esto seria lo que contendria la fila
-        $("#listamonitordeestudiantes>tbody").prepend(fila);
+        if (datosRegistrados[0][i]['traffic_responsable']==0) {
+            console.log(datosRegistrados[0][i]['traffic_responsable']);
+            var fila = '<tr id="row' + i + '" class="claseid" ><td>' + datosRegistrados[0][i]['client_identificacion'] + '</td><td>' + datosRegistrados[0][i]['client_name'] + '</td><td>' + datosRegistrados[0][i]['traffic_date'] + '</td> <td>' + datosRegistrados[0][i]['devices_alias'] + '</td> <td> Automatico </td>  </tr>'; //esto seria lo que contendria la fila
+            $("#listamonitordeestudiantes>tbody").prepend(fila);
+        }
+        else
+        {
+            var fila = '<tr id="row' + i + '" class="claseid" ><td>' + datosRegistrados[0][i]['client_identificacion'] + '</td><td>' + datosRegistrados[0][i]['client_name'] + '</td><td>' + datosRegistrados[0][i]['traffic_date'] + '</td> <td>' + datosRegistrados[0][i]['devices_alias'] + '</td> <td> Accesado por el monitor: ' + datosRegistrados[0][i]['traffic_responsable'] + '</td>  </tr>'; //esto seria lo que contendria la fila
+            $("#listamonitordeestudiantes>tbody").prepend(fila);
+        }
+
         // $('#listamonitordeestudiantes tr:first').after(fila);
     }
 </script>
@@ -95,6 +106,7 @@ require_once "../../Modelo/M/ListaTraficoPortal.php";
 <!-- <script src="../dist/js/adminlte.min.js"></script> -->
 <!-- AdminLTE for demo purposes -->
 <!-- <script src="../dist/js/demo.js"></script>s -->
+
 
 <script>
     $(function() {

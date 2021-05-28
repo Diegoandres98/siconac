@@ -9,9 +9,9 @@ require_once "../../Modelo/M/IdDeLosPortalesDelMonitor.php";
   document.querySelector('#Label8').innerText = "Lista De Portales A Cargo";
 </script>
 <link rel="stylesheet" href="parpadeo.css">
+<link rel="stylesheet" href="led.css">
 <!-- Main content -->
 <section class="content">
-
   <div class="container-fluid">
     <div class="row">
       <?php
@@ -19,7 +19,10 @@ require_once "../../Modelo/M/IdDeLosPortalesDelMonitor.php";
       while ($i < $countP) :
         echo '
                 <div class="col-12 col-sm-6 col-md-6">
-                  <div class="info-box">
+                  <div class="info-box" style="position:relative !important;box-sizing: border-box !important;">
+                    <div class="led-box">
+                      <div id="led'.$Portales[$i]['devices_id'].'" class="led-red"></div>
+                    </div>
                     <span id="bombillo'. $Portales[$i]['devices_id'] .'" class="info-box-icon bg-info elevation-1"><i class="fas fa-door-open"></i></span>
     
                     <div class="info-box-content">

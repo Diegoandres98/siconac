@@ -13,7 +13,7 @@
 //     });
 //   }
 // }
-
+var controladora = false;
 var audio = new Audio('../../audio.mp3');
 function process_msg(topic, message){
   var msg = message.toString();
@@ -22,7 +22,13 @@ function process_msg(topic, message){
   var query = splitted_topic[1];
 
   if (query == "temp"){
-    $("#display_temp1").html(msg);
+    $("#led"+serial_number).removeClass("led-red");
+    $("#led"+serial_number).addClass("led-green");
+  }
+
+  if (query=="offline") {
+    $("#led"+serial_number).removeClass("led-green");
+    $("#led"+serial_number).addClass("led-red");
   }
 
   if (query == "user_name"){
@@ -31,7 +37,6 @@ function process_msg(topic, message){
     setTimeout(function(){
       $("#display_new_access"+serial_number).html("Trafico En Vivo:");
     }, 3000);
-
   }
 
   if (query=="command") {
@@ -98,6 +103,8 @@ client.on('connect', () => {
 
       client.subscribe(element['devices_id']+"/command", { qos: 0 }, (error) => {})
       client.subscribe(element['devices_id']+"/user_name", { qos: 0 }, (error) => {})
+      client.subscribe(element['devices_id']+"/offline", { qos: 0 }, (error) => {})
+      client.subscribe(element['devices_id']+"/temp", { qos: 0 }, (error) => {})
     });
 
    
