@@ -17,7 +17,7 @@ $(document).ready(function () {
                   Swal.fire({
                       position: 'top-end',
                       icon: 'success',
-                      title: 'Monitor Creado Con Exito',
+                      title: 'Guardado Con Exito',
                       showConfirmButton: false,
                       timer: 2500
                     })

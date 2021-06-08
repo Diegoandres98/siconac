@@ -33,7 +33,7 @@
                         <label for="exampleInputFile">Foto De Perfil</label> (Si no eliges una foto se pondra una predeterminada por el sistema)
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" name="subir_archivo" accept=".jpg, .png">
+                                <input type="file" class="custom-file-input" name="subir_archivo" accept=".jpg, .png .jpeg">
                                 <label class="custom-file-label" for="exampleInputFile">Escoger Archivo</label>
                             </div>
                             <!-- <div class="input-group-append">

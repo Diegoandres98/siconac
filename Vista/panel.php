@@ -389,6 +389,10 @@ require_once "../Modelo/DatosPrincipales.php"
 
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script>
+  IdAdmix = <?php echo $_SESSION['users_id']; ?>;
+</script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <!-- <script src="../dist/js/pages/dashboard2.js"></script> -->
 

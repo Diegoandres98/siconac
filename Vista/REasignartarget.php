@@ -115,3 +115,4 @@
     }
 </script>
 <script src="../Funciones/REAsignaciondetarjetas.js"></script>
+<script src="../Mqtt/ConectMqttAdminParaTarget.js"></script>

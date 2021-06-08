@@ -107,4 +107,7 @@
           document.getElementById("viewDato").innerHTML = x;
       }
   </script>
+
   <script src="../Funciones/Asignaciondetarjetas.js"></script>
+
+  <script src="../Mqtt/ConectMqttAdminParaTarget.js"></script>

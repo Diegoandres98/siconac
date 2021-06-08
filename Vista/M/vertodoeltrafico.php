@@ -78,7 +78,7 @@ require_once "../../Modelo/M/ListaTraficoPortal.php";
         }
         else
         {
-            var fila = '<tr id="row' + i + '" class="claseid" ><td>' + datosRegistrados[0][i]['client_identificacion'] + '</td><td>' + datosRegistrados[0][i]['client_name'] + '</td><td>' + datosRegistrados[0][i]['traffic_date'] + '</td> <td>' + datosRegistrados[0][i]['devices_alias'] + '</td> <td> Accesado por el monitor: ' + datosRegistrados[0][i]['traffic_responsable'] + '</td>  </tr>'; //esto seria lo que contendria la fila
+            var fila = '<tr id="row' + i + '" class="claseid" ><td>' + datosRegistrados[0][i]['client_identificacion'] + '</td><td>' + datosRegistrados[0][i]['client_name'] + '</td><td>' + datosRegistrados[0][i]['traffic_date'] + '</td> <td>' + datosRegistrados[0][i]['devices_alias'] + '</td> <td> Admitido por monitor: ' + datosRegistrados[0][i]['traffic_responsable'] + '</td>  </tr>'; //esto seria lo que contendria la fila
             $("#listamonitordeestudiantes>tbody").prepend(fila);
         }
 

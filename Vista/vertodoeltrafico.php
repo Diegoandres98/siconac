@@ -51,7 +51,7 @@
                                             <td>'.$Trafico[$i]['client_name'].'</td>
                                             <td>'.$Trafico[$i]['traffic_date'].'</td>
                                             <td>'.$Trafico[$i]['devices_alias'].'</td>
-                                            <td> Accedido por el monitor: '.$Trafico[$i]['traffic_responsable'].'</td>
+                                            <td>  Admitido por monitor: '.$Trafico[$i]['traffic_responsable'].'</td>
                                         </tr>
                                         ';
                                     }

@@ -23,8 +23,8 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
                                     <th>Identificacion</th>
                                     <th>Nombre</th>
                                     <th>Tarjeta</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Estado</th>
+                                    <th>Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,8 +67,8 @@ require_once "../Modelo/ListadoDeClientesRegistrados.php";
                                     <th>Identificacion</th>
                                     <th>Nombre</th>
                                     <th>Tarjeta</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Estado</th>
+                                    <th>Accion</th>
                                 </tr>
                             </tfoot>
                         </table>
